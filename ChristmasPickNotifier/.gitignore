@@ -8,6 +8,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.DS_Store
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -25,7 +26,9 @@ bld/
 [Ll]og/
 
 # Visual Studio 2015/2017 cache/options directory
+**/.vs/
 .vs/
+
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
@@ -221,7 +224,7 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
-# Including strong name files can present a security risk 
+# Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
 #*.snk
 
@@ -317,7 +320,7 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 
-# Azure Stream Analytics local run output 
+# Azure Stream Analytics local run output
 ASALocalRun/
 
 # MSBuild Binary and Structured Log
@@ -326,11 +329,8 @@ ASALocalRun/
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
-# MFractors (Xamarin productivity tool) working folder 
+# MFractors (Xamarin productivity tool) working folder
 .mfractor/
 
-# Secrets and other configuration that is not needed
-secrets.*
-secret.*
-local.settings.json
-.DS_Store
+# test cfg and other important secrets
+secrets.json
