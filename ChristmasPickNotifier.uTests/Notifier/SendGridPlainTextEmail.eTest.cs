@@ -16,7 +16,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
         public SendGridPlainTextEmailTests(ITestOutputHelper logger, SecretsConfiguration cfg)
         {
             cfg.DefaultConfiguration();
-            _sendGridApiKey = cfg.GetSecret("sendgrigApiKey");
+            _sendGridApiKey = cfg.GetSecret("sendgridApiKey");
         }
 
         private PickAvailableMessage CreateTestEmailMessage(string To)
@@ -43,7 +43,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
         {
             // Arrange
             var sut = new SendGridNotifyPickIsAvalable(_sendGridApiKey);
-            var content = CreateTestEmailMessage("test-xdq1u@mail-tester.com");
+            var content = CreateTestEmailMessage("test-xdq1u@srv1.mail-tester.com");
             var testEnvelope = new Envelope(content);
             // Act
             var actual = await sut.Notify(testEnvelope);
@@ -72,6 +72,23 @@ namespace ChristmasPickNotifier.uTest.Notifier
             // Arrange
             var sut = new SendGridNotifyPickIsAvalable(_sendGridApiKey);
             var content = CreateTestEmailMessage("ironmoose12@gmail.com");
+            var testEnvelope = new Envelope(content);
+            // Act
+            var actual = await sut.Notify(testEnvelope);
+            // Assert
+            Assert.True(actual.IsSuccess(), $"Expected email to send but it failed. <{actual.Message}>");
+        }
+
+        [Theory]
+        [InlineData(new object[] { "cgehred@icloud.com" })]
+        [InlineData(new object[] { "gehredp@gmail.com" })]
+        [InlineData(new object[] { "ragsn3@gmail.com" })]
+        [InlineData(new object[] { "meggella2001@yahoo.com" })]
+        public async Task GivenNotifyPickMessageWhenVariousEmailThenEmailsAreSent(string testEmailAddress)
+        {
+            // Arrange
+            var sut = new SendGridNotifyPickIsAvalable(_sendGridApiKey);
+            var content = CreateTestEmailMessage(testEmailAddress);
             var testEnvelope = new Envelope(content);
             // Act
             var actual = await sut.Notify(testEnvelope);
