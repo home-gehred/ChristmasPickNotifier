@@ -51,6 +51,7 @@ namespace ChristmasPickNotifier.eTest
             await _notifyQueue.AddMessageAsync(message);
             // Assert
             // How will you test this?
+            // Don't forget about MailSlurp which may be a great way to go.
         }
 
         public void Dispose()
