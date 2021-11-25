@@ -5,13 +5,34 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Core Launch (email-2021)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net5.0/ChristmasPickPublisher.dll",
+            "args": ["--year", "2021", "--type", "adult"],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net5.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },{
+            "name": ".NET Core Launch (2021)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0/ChristmasPickTrialHarness.dll",
+            "args": ["--year", "2021", "--type", "adult"],
+            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickNotifier/bin/Debug/net5.0/ChristmasPickNotifier.dll",
+            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0/ChristmasPickTrialHarness.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ChristmasPickNotifier",
+            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0",
             "console": "internalConsole",
             "stopAtEntry": false
         },

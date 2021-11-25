@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<XMasArchive>
+  <ChristmasPast>
+    <XMasDate>12/25/2008</XMasDate>
+    <Picks>
+      <Pick>
+        <Subject firstname="Stacey" lastname="Fagerstrom" birthday="2/2/1956" />
+        <Recipient firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Todd" lastname="Fagerstrom" birthday="8/27/1956" />
+        <Recipient firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+        <Recipient firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+        <Recipient firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+        <Recipient firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+        <Recipient firstname="John" lastname="Gehred" birthday="2/23/1960" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+        <Recipient firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="John" lastname="Gehred" birthday="2/23/1960" />
+        <Recipient firstname="Todd" lastname="Fagerstrom" birthday="8/27/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+        <Recipient firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+        <Recipient firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+        <Recipient firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+        <Recipient firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+        <Recipient firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+        <Recipient firstname="Stacey" lastname="Fagerstrom" birthday="2/2/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+        <Recipient firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+        <Recipient firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+        <Recipient firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+        <Recipient firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+        <Recipient firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+      </Pick>
+    </Picks>
+  </ChristmasPast>
+  <ChristmasPast>
+    <XMasDate>12/25/2007</XMasDate>
+    <Picks>
+      <Pick>
+        <Subject firstname="Stacey" lastname="Fagerstrom" birthday="2/2/1956" />
+        <Recipient firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Todd" lastname="Fagerstrom" birthday="8/27/1956" />
+        <Recipient firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+        <Recipient firstname="John" lastname="Gehred" birthday="2/23/1960" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+        <Recipient firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+        <Recipient firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+        <Recipient firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+        <Recipient firstname="Todd" lastname="Fagerstrom" birthday="8/27/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+        <Recipient firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="John" lastname="Gehred" birthday="2/23/1960" />
+        <Recipient firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+        <Recipient firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+        <Recipient firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+        <Recipient firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+        <Recipient firstname="Stacey" lastname="Fagerstrom" birthday="2/2/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+        <Recipient firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+        <Recipient firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+        <Recipient firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+        <Recipient firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+        <Recipient firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+        <Recipient firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+      </Pick>
+    </Picks>
+  </ChristmasPast>
+  <ChristmasPast>
+    <XMasDate>12/25/2009</XMasDate>
+    <Picks>
+      <Pick>
+        <Subject firstname="Sarah" lastname="Schultz" birthday="9/7/1988" />
+        <Recipient firstname="Stacey" lastname="Tougher" birthday="2/2/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Katy" lastname="Gehred" birthday="7/31/1988" />
+        <Recipient firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+        <Recipient firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+        <Recipient firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+        <Recipient firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Amy" lastname="Phillips" birthday="3/20/1984" />
+        <Recipient firstname="Katy" lastname="Gehred" birthday="7/31/1988" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+        <Recipient firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+        <Recipient firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+        <Recipient firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+        <Recipient firstname="Amy" lastname="Phillips" birthday="3/20/1984" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+        <Recipient firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+        <Recipient firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+        <Recipient firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+        <Recipient firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="John" lastname="Gehred" birthday="2/23/1960" />
+        <Recipient firstname="Sarah" lastname="Schultz" birthday="9/7/1988" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+        <Recipient firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+        <Recipient firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+        <Recipient firstname="John" lastname="Gehred" birthday="2/23/1960" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+        <Recipient firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+        <Recipient firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Stacey" lastname="Tougher" birthday="2/2/1956" />
+        <Recipient firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+      </Pick>
+    </Picks>
+  </ChristmasPast>
+  <ChristmasPast>
+    <XMasDate>12/25/2010</XMasDate>
+    <Picks>
+      <Pick>
+        <Subject firstname="Stacey" lastname="Tougher" birthday="2/2/1956" />
+        <Recipient firstname="Sarah" lastname="Schultz" birthday="9/7/1988" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+        <Recipient firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+        <Recipient firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+        <Recipient firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+        <Recipient firstname="Stacey" lastname="Tougher" birthday="2/2/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+        <Recipient firstname="Paul" lastname="Gehred" birthday="7/20/1957" />
+      </Pick>
+      <Pick>
+        <Subject firstname="John" lastname="Gehred" birthday="2/23/1960" />
+        <Recipient firstname="Patti" lastname="Gehred" birthday="10/4/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+        <Recipient firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+        <Recipient firstname="Domino" lastname="Gehred" birthday="9/27/1989" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+        <Recipient firstname="John" lastname="Gehred" birthday="2/23/1960" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+        <Recipient firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Dean" lastname="Hoornaert" birthday="1/4/1966" />
+        <Recipient firstname="Larisa" lastname="Gehred" birthday="1/12/1963" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Meg" lastname="Hoornaert" birthday="8/14/1967" />
+        <Recipient firstname="Clare" lastname="Matranga" birthday="2/24/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Angie" lastname="Gehred" birthday="9/26/1971" />
+        <Recipient firstname="Ann" lastname="Gehred" birthday="4/1/1961" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Bob" lastname="Gehred" birthday="7/27/1972" />
+        <Recipient firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Amy" lastname="Schultz" birthday="3/20/1984" />
+        <Recipient firstname="Beth" lastname="Gehred" birthday="7/11/1965" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Alison" lastname="Gehred" birthday="5/16/1985" />
+        <Recipient firstname="Amy" lastname="Schultz" birthday="3/20/1984" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+        <Recipient firstname="Rick" lastname="Schultz" birthday="11/27/1956" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Nemo" lastname="Gehred" birthday="1/9/1986" />
+        <Recipient firstname="Katy" lastname="Gehred" birthday="7/31/1988" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Katy" lastname="Gehred" birthday="7/31/1988" />
+        <Recipient firstname="Marco" lastname="Matranga" birthday="10/29/1958" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Sarah" lastname="Schultz" birthday="9/7/1988" />
+        <Recipient firstname="Nick" lastname="Schultz" birthday="11/5/1985" />
+      </Pick>
+      <Pick>
+        <Subject firstname="Domino" lastname="Gehred" birthday="9/27/1989" />
+        <Recipient firstname="Anne" lastname="Schultz" birthday="7/11/1958" />
+      </Pick>
+    </Picks>
+  </ChristmasPast>
+</XMasArchive>
