@@ -1,6 +1,7 @@
 ﻿using System;
 using ChristmasPickMessages;
 using ChristmasPickNotifier.Notifier.Email;
+using ChristmasPickCommon.Configuration;
 
 namespace ChristmasPickNotifier.Notifier.NotifierFactories
 {

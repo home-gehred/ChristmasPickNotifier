@@ -23,11 +23,11 @@ namespace ChristmasPickMessages.uTests.Messages
             // Act
             var actual = JsonConvert.DeserializeObject<PickAvailableMessage>(sutAsString);
             // Assert
-            Assert.Equal<string>(sut.HtmlBody, actual.HtmlBody);
-            Assert.Equal<string>(sut.PlainTextBody, actual.PlainTextBody);
-            Assert.Equal<string>(sut.Name, actual.Name);
-            Assert.Equal<string>(sut.Subject, actual.Subject);
-            Assert.Equal<string>(sut.ToAddress, actual.ToAddress);
+            Assert.Equal(sut.HtmlBody, actual.HtmlBody);
+            Assert.Equal(sut.PlainTextBody, actual.PlainTextBody);
+            Assert.Equal(sut.Name, actual.Name);
+            Assert.Equal(sut.Subject, actual.Subject);
+            Assert.Equal(sut.ToAddress, actual.ToAddress);
             Assert.Equal<string>(sut.NotificationType, actual.NotificationType);
         }
     }

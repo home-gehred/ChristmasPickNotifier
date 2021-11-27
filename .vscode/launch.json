@@ -10,17 +10,28 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net5.0/ChristmasPickPublisher.dll",
-            "args": ["--year", "2021", "--type", "adult"],
+            "args": [
+                "--year",
+                "2021",
+                "--type",
+                "adult"
+            ],
             "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net5.0",
             "console": "internalConsole",
             "stopAtEntry": false
-        },{
+        },
+        {
             "name": ".NET Core Launch (2021)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0/ChristmasPickTrialHarness.dll",
-            "args": ["--year", "2021", "--type", "adult"],
+            "args": [
+                "--year",
+                "2021",
+                "--type",
+                "adult"
+            ],
             "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0",
             "console": "internalConsole",
             "stopAtEntry": false
@@ -46,6 +57,17 @@
             "type": "coreclr",
             "request": "attach",
             "processId": "${command:azureFunctions.pickProcess}"
+        },
+        {
+            "name": "Docker Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/webapp/package.json",
+                "localRoot": "${workspaceFolder}/webapp"
+            }
         }
     ]
 }

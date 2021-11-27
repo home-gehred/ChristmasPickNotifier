@@ -1,7 +1,9 @@
-﻿using System;
+﻿
+
+using System;
 using System.IO;
-using SecurityUtil.SecretsProvider;
 using Xunit;
+using xUnitTestSecrets.SecretProviders;
 
 namespace xUnitTestSecrets
 {

@@ -2,6 +2,7 @@
 using ChristmasPickMessages.Messages;
 using ChristmasPickNotifier.Notifier;
 using ChristmasPickNotifier.Notifier.Email;
+using ChristmasPickCommon.Configuration;
 using Moq;
 using Xunit;
 
