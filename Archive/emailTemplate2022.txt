@@ -1,0 +1,40 @@
+Merry Christmas {giftMaker},
+[[newline]]
+It is that time of year again!! Get your DIY skills fired up as you now know who your victim, uh I mean, the lucky person who you get to make a gift for.
+[[newline]]
+By now you should all know the drill...
+[[newline]]
+1. Complain about who you have to get a gift for.
+[[newline]]
+2. Send email to Supreme Master Overlord of Christmas (bagehred@sbcglobal.net) that you have gotten your pick.
+[[newline]]
+3. Notify family members you got your name for Christmas. Relay that, if they do not have a name, they could check their SPAM folder, or get in touch with Uncle Bob. (bagehred@sbcglobal.net)
+[[newline]]
+4. Procrastinate making $5 gift until the very last minute.
+[[newline]]
+5. Create the most thoughtful gift possible with little time left.
+[[newline]]
+This could be a duplicate email, if you have responded already I apologize and disregard, otherwise please read on.
+[[newline]]
+I hope you all truly had a wonderful 2022, I know I have to this point, until Aunt Anne booted me and my family out of Christmas celebrations this year :-). (j/k)
+[[newline]]
+Interesting news on the Christmas front, Cal and Claire have tied the knot so they can now buy presents for their sibs, and Max is leaving sugar mountain and joins the rest of us mouth breathers in the $5 world.
+[[newline]]
+As acting Supreme Master Overlord of Christmas we are allowing you {giftMaker} one and only one option, make the best $5 gift you can for your person.
+[[newline]]
+It is your responsibility to be sure that your person will have “something” to open by Christmas day.
+[[newline]]
+Love,
+[[newline]]
+Supreme Master Overlord of Christmas
+[[newline]]       
+Important Dates:
+[[newline]]
+Souper Saturday: November 26th anytime after 2 pm dinner around 5 ish
+[[newline]]
+Christmas Sing - A - Long: December 17th anytime after 3:30 pm
+[[newline]]
+Gehred Nation Christmas: Monday December 26th at Schultzee's anytime after 2 pm
+[[newline]]
+[[newline]]
+{pickMessage}

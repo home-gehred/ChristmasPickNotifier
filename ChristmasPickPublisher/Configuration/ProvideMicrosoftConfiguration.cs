@@ -12,6 +12,7 @@ namespace ChristmasPickPublisher.Configuration
         public readonly static CfgKey KidArchivePath = new CfgKey("Values:kidArchivePath");
         public readonly static CfgKey PathToEmailTemplate = new CfgKey("Values:pathToEmailTemplate");
         public readonly static CfgKey SendGridApiKey = new CfgKey("sendgrid-api-key");
+        public readonly static CfgKey SendInBlueApiKey = new CfgKey("sendinblue-api-key");
         private readonly string name;
         private CfgKey(string configurationKey)
         {
@@ -37,7 +38,7 @@ namespace ChristmasPickPublisher.Configuration
             var value = configuration[configurationKey];
             if (value == null)
             {
-
+                throw new ArgumentNullException($"The configuration key <{configurationKey}> is not found.");
             }
             return value;
         }

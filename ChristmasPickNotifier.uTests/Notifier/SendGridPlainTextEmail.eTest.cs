@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using ChristmasPickMessages;
 using ChristmasPickMessages.Messages;
 using ChristmasPickNotifier.Notifier.Email;
@@ -15,6 +16,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
         private readonly string _sendGridApiKey;
         public SendGridPlainTextEmailTests(ITestOutputHelper logger, SecretsConfiguration cfg)
         {
+            Debugger.Break();
             cfg.DefaultConfiguration();
             _sendGridApiKey = cfg.GetSecret("sendgridApiKey");
         }
@@ -38,6 +40,8 @@ namespace ChristmasPickNotifier.uTest.Notifier
         // http://www.mail-tester.com/test-xdq1u
         // 11/11/2018 7.2 out of 10
         // 11/10/2018 your score is 5.3 out of 10
+
+        // dotnet test --configuration debug --filter FullyQualifiedName~ChristmasPickNotifier.uTest.Notifier.SendGridPlainTextEmailTests.GivenNotifyPickMessageWhenMail
         [Fact]
         public async Task GivenNotifyPickMessageWhenMailTesterIsUsedThenEmailIsSent()
         {
@@ -66,9 +70,11 @@ namespace ChristmasPickNotifier.uTest.Notifier
             Assert.True(actual.IsSuccess(), $"Expected email to send but it failed. <{actual.Message}>");
         }
 
+        // dotnet test --configuration debug --filter FullyQualifiedName~ChristmasPickNotifier.uTest.Notifier.SendGridPlainTextEmailTests.GivenNotifyPickMessageWhenGmailIsUsedThenEmailIsSent
         [Fact]
         public async Task GivenNotifyPickMessageWhenGmailIsUsedThenEmailIsSent()
         {
+            Debugger.Break();
             // Arrange
             var sut = new SendGridNotifyPickIsAvalable(_sendGridApiKey);
             var content = CreateTestEmailMessage("ironmoose12@gmail.com");

@@ -76,8 +76,6 @@
       <Person firstname="Beth" lastname="Gehred" birthday="7/11/1965" id="9F5AB8DB-4EA2-45C3-8709-93A12A2F9B6B"/>
     </Parents>
     <Children>
-      <Person firstname="Calvin" lastname="Gehred" birthday="6/26/1992" id="278EC835-52FF-4B33-A6B6-BF5FC2539D65"/>
-      <Person firstname="Claire" lastname="Tseng" birthday="7/11/1992" id="F789F54E-52BB-41E3-A44B-E8C7961726DD"/>
       <Person firstname="Capri" lastname="Gehred" birthday="3/17/1997" id="BCFADDD9-A008-4E5F-93BC-B483E6C7CA8C"/>
     </Children>
   </Family>
@@ -170,5 +168,14 @@
     </Parents>
     <Children>
     </Children>
+  </Family>
+  <Family>
+      <FamilyName>Calvin and Claire</FamilyName>
+      <Parents>
+        <Person firstname="Calvin" lastname="Gehred" birthday="6/26/1992" id="278EC835-52FF-4B33-A6B6-BF5FC2539D65"/>
+        <Person firstname="Claire" lastname="Tseng" birthday="7/11/1992" id="F789F54E-52BB-41E3-A44B-E8C7961726DD"/>
+      </Parents>
+      <Children>
+      </Children>
   </Family>
 </FamilyTree>

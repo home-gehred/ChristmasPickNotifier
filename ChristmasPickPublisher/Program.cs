@@ -1,6 +1,6 @@
 ﻿/*
 To run and debug this project...
-Start by using Visual studio Code. (Visual Studio communit edition will not work)
+Start by using Visual studio Code. (Visual Studio community edition will not work)
 
 In a terminal window start up 'azurite' this will start up an emulator
 To see what is happening with the emulater I install the Azure Storage explorer in download folder

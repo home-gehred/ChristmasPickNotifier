@@ -8,7 +8,6 @@ using Common;
 using Common.ChristmasPickList;
 using ChristmasPickCommon;
 using ChristmasPickCommon.Configuration;
-using ChristmasPickNotifier.Notifier;
 using ChristmasPickMessages;
 using ChristmasPickMessages.Messages;
 using ChristmasPickPublisher.Configuration;
@@ -76,10 +75,12 @@ namespace ChristmasPickPublisher
             if ((xmasDayValid && listTypeValid) == false)
             {
                 throw new ApplicationException(
-                    $"Either the year or list type argument is not valid. Please check command line arguments and try again.");
-            } 
-            var sendGridApiKey = cfgProvider.GetConfiguration(CfgKey.SendGridApiKey);
-            var emailer = new SendGridNotifyPickIsAvalable(sendGridApiKey);
+                    $"Either the year, list, max argument is not valid. Please check command line arguments and try again.");
+            }
+            //var sendGridApiKey = cfgProvider.GetConfiguration(CfgKey.SendGridApiKey);
+            //var emailer = new SendGridNotifyPickIsAvalable(sendGridApiKey);
+            var sendInBlueApiKey = cfgProvider.GetConfiguration(CfgKey.SendInBlueApiKey);
+            var emailer = new SendInBlueNotifyPickIsAvailable(sendInBlueApiKey);
             var familyContacts = cfgProvider.GetConfiguration(CfgKey.FamilyContacts);
             var archivePath = string.Empty;
             decimal giftAmount = 0;
@@ -112,6 +113,11 @@ namespace ChristmasPickPublisher
                         var emailAddresses = emailAddressProvider.GetEmailAddresses(person);
 
                         logger.LogInformation($"Attempting to email {person} with address(es), ");
+                        if (emailCount >= opts.MaxEmail)
+                        {
+                            logger.LogInformation($"The maximum number of emails {opts.MaxEmail} have been reached.");
+                            break;
+                        }
                         var oneGoodEmailSent = false;
                         foreach (var emailAddress in emailAddresses)
                         {
