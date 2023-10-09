@@ -22,7 +22,9 @@ namespace ChristmasPickMessages.uTests
             var actual = JsonConvert.DeserializeObject<PickAvailableMessage>(envelope.Payload);
 
             // Assert
-            Assert.Equal<string>(envelopeContent.NotificationType, actual.NotificationType);
+            // Assert below was giving warning's 
+            //Assert.Equal<string>(envelopeContent.NotificationType, actual.NotificationType);
+            Assert.Equal((string)envelopeContent.NotificationType, (string)actual.NotificationType);
         }
     }
 }

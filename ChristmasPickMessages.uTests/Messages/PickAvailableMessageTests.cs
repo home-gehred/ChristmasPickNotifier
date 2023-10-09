@@ -28,7 +28,7 @@ namespace ChristmasPickMessages.uTests.Messages
             Assert.Equal(sut.Name, actual.Name);
             Assert.Equal(sut.Subject, actual.Subject);
             Assert.Equal(sut.ToAddress, actual.ToAddress);
-            Assert.Equal<string>(sut.NotificationType, actual.NotificationType);
+            Assert.Equal((string)sut.NotificationType, (string)actual.NotificationType);
         }
     }
 }

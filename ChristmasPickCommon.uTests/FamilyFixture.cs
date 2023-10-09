@@ -42,7 +42,7 @@ namespace Common.Test
       StreamReader serializedStream = new StreamReader(myStream);
       string actual = serializedStream.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\"?>\n<Family>\n  <FamilyName>Brew City Gehreds</FamilyName>\n  <Parents>\n    <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\n    <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\n  </Parents>\n  <Children>\n    <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />\n    <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\" id=\"41111111-2222-3333-4444-555555555555\" />\n  </Children>\n</Family>", actual);
+      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Family>\n  <FamilyName>Brew City Gehreds</FamilyName>\n  <Parents>\n    <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\n    <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\n  </Parents>\n  <Children>\n    <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />\n    <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\" id=\"41111111-2222-3333-4444-555555555555\" />\n  </Children>\n</Family>", actual);
 
     }
 

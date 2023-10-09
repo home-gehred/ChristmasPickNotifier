@@ -24,7 +24,7 @@ namespace Common.Test
       StreamReader xmlData = new StreamReader(myStream);
       string actual = xmlData.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\"?>\n<PersonCollection>\n  <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\n  <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\n</PersonCollection>", actual);
+      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<PersonCollection>\n  <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\n  <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\n</PersonCollection>", actual);
 
     }
 
