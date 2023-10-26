@@ -23,6 +23,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ChristmasPickCommon.Configuration;
 using ChristmasPickPublisher.Configuration;
+using ChristmasPickPublisher.Commands.EmailContacts;
+using ChristmasPickPublisher.Commands.PublishChristmasPicks;
 
 namespace ChristmasPickPublisher
 {
@@ -30,16 +32,20 @@ namespace ChristmasPickPublisher
     {
         static async Task<int> Main(string[] args)
         {
-            using var host = CreateHostBuilder(args).Build();
             CancellationTokenSource source = new CancellationTokenSource();
+            using var host = CreateHostBuilder(args, source).Build();
             await host.StartAsync(source.Token);
             //await host.RunAsync();
+            
             Console.WriteLine("You got here!");
+            source.Token.WaitHandle.WaitOne();
+            Console.WriteLine("Program complete..");
             await host.StopAsync(source.Token);
             return 0;        
         }
-        private static IHostBuilder CreateHostBuilder(string[] args)
+        private static IHostBuilder CreateHostBuilder(string[] args, CancellationTokenSource source)
         {
+            var argumentProvider = new ArgumentProvider(args, source);
             return Host.CreateDefaultBuilder(args)
             .ConfigureLogging(logging =>
                 {
@@ -55,22 +61,15 @@ namespace ChristmasPickPublisher
                         .AddUserSecrets<Program>()
                         .Build();
                 })
-                .ConfigureServices((_, services) => {
+            .ConfigureServices((_, services) => {
                     services.AddTransient<IProvideConfiguration, ProvideMicrosoftConfiguration>();
-                    services.AddHostedService<PublishChristmasPicks>();
+                    services.AddTransient<IEmailContacts, EmailContactService>();
+                    services.AddTransient<IPublishChristmasPicks, PublishChristmasPicksService>();
+                    services.AddSingleton<IArgumentProvider>(argumentProvider);
+                    services.AddHostedService<CommandFactory>();
+                    //services.AddHostedService<PublishChristmasPicks>();
                 });
                 
-        }
-        public static async Task<int> PublishChristmasPicks(IServiceProvider services)
-        {
-            using var serviceScope = services.CreateScope();
-            var provider = serviceScope.ServiceProvider;
-
-            var christmasPick = provider.GetRequiredService<IPublishChristmsPicks>();
-
-            await christmasPick.PublishChristmasPicksAsync();
-
-            return 0;
         }
 
     }

@@ -20,12 +20,18 @@ namespace Common
 
         public static implicit operator string(EmailAddress x)
         {
-            return x.emailAddress;
+            if (x != null)
+                return x.emailAddress;
+            return string.Empty;
         }
     }
     public interface IEmailAddressProvider
     {
         IEnumerable<EmailAddress> GetEmailAddresses(Person x);
+        IEnumerable<Person> GetAllPeopleWithContact();
+        bool ShouldBeContacted(Person person);
+        void SetContactStatus(Person x, bool shouldBeContacted);
+        void Save();
     }
 
     public class JsonFileEmailAddressProvider : IEmailAddressProvider
@@ -139,6 +145,16 @@ namespace Common
                 return contactEmails;
             }
             throw new ApplicationException($"Cound not find {x} in contact list.");
+        }
+
+        public IEnumerable<Person> GetAllPeopleWithContact()
+        {
+            var people = new List<Person>();
+            foreach(var key in contacts.Keys)
+            {
+                people.Add(new Person(key.FirstName, key.LastName, key.Birthday, Guid.Empty.ToString()));
+            }
+            return people;
         }
     }
 }

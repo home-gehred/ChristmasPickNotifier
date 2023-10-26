@@ -5,69 +5,130 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (email-2021)",
+            "name": "Publish XmasPicks (Adult)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net5.0/ChristmasPickPublisher.dll",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0/ChristmasPickPublisher.dll",
+            "args": [
+                "publish",
+                "--year",
+                "2023",
+                "--list",
+                "adult",
+                "--max",
+                "-1"
+            ],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Publish XmasPicks (kid)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0/ChristmasPickPublisher.dll",
+            "args": [
+                "publish",
+                "--year",
+                "2023",
+                "--list",
+                "kid",
+                "--max",
+                "-1"
+            ],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (emailContacts defaults)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0/ChristmasPickPublisher.dll",
+            "args": [
+                "emailcontacts",
+                "--template",
+                "/Users/cgehrer/Code/ChristmasPickNotifier/Archive/contactEmail.txt"
+            ],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (emailContacts help)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0/ChristmasPickPublisher.dll",
+            "args": [
+                "emailcontacts",
+                "--help"
+            ],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (version)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0/ChristmasPickPublisher.dll",
+            "args": [
+                "version"
+            ],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (help)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0/ChristmasPickPublisher.dll",
+            "args": [
+                "help"
+            ],
+            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net7.0",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "ChristmasPicks (Adult)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net7.0/ChristmasPickTrialHarness.dll",
             "args": [
                 "--year",
-                "2021",
+                "2023",
                 "--type",
                 "adult"
             ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net5.0",
+            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net7.0",
             "console": "internalConsole",
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Launch (2021)",
+            "name": "ChristmasPicks (Kid)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0/ChristmasPickTrialHarness.dll",
+            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net7.0/ChristmasPickTrialHarness.dll",
             "args": [
                 "--year",
-                "2021",
+                "2023",
                 "--type",
-                "adult"
+                "kid"
             ],
-            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0",
+            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net7.0",
             "console": "internalConsole",
             "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0/ChristmasPickTrialHarness.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net5.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach"
-        },
-        {
-            "name": "Attach to .NET Functions",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:azureFunctions.pickProcess}"
-        },
-        {
-            "name": "Docker Node.js Launch",
-            "type": "docker",
-            "request": "launch",
-            "preLaunchTask": "docker-run: debug",
-            "platform": "node",
-            "node": {
-                "package": "${workspaceFolder}/webapp/package.json",
-                "localRoot": "${workspaceFolder}/webapp"
-            }
         }
+
     ]
 }

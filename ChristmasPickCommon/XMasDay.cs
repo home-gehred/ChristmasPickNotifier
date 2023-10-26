@@ -42,5 +42,10 @@ namespace Common.ChristmasPickList
 
         public static int Max => max;
         public static int Min => min;
+
+        public override string ToString()
+        {
+            return xmasDay.Year.ToString();
+        }
     }
 }

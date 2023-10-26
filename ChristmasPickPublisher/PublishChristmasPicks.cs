@@ -16,10 +16,13 @@ using ChristmasPickNotifier.Notifier.Email;
 
 namespace ChristmasPickPublisher
 {
+/*
+    [Obsolete("Moving this to new namespace")]
     public interface IPublishChristmsPicks
     {
-        Task<int> PublishChristmasPicksAsync();
+        //Task<int> PublishChristmasPicksAsync();
     }
+
     public class PublishChristmasPicks : BackgroundService, IPublishChristmsPicks
     {
         private readonly ILogger<PublishChristmasPicks> logger;
@@ -171,4 +174,5 @@ namespace ChristmasPickPublisher
             return Task.FromResult(0);
         }
     }
+*/
 }

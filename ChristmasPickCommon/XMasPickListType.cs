@@ -5,12 +5,14 @@ namespace ChristmasPickCommon
 {
     public class XMasPickListType
     {
-        public static XMasPickListType Adult = new XMasPickListType("adult");
-        public static XMasPickListType Kid = new XMasPickListType("kid"); 
+        public static XMasPickListType Adult = new XMasPickListType("adult", 5M);
+        public static XMasPickListType Kid = new XMasPickListType("kid", 20M); 
         private readonly string listType;
-        private XMasPickListType(string listType)
+        private readonly decimal giftAmount;
+        private XMasPickListType(string listType, decimal giftAmount)
         {
             this.listType = listType;
+            this.giftAmount = giftAmount;
         }
 
         public override string ToString()
@@ -34,6 +36,21 @@ namespace ChristmasPickCommon
             }
             listType = null;
             return false;
+        }
+
+        public static IEnumerable<string> ValidPickListTypes()
+        {
+            return new List<string> { 
+                Adult.ToString(),
+                Kid.ToString()
+            };
+        }
+
+        public decimal GiftAmount {
+            get
+            {
+                return giftAmount;
+            }
         }
     }
 }
