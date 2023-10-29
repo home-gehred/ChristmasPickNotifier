@@ -1,0 +1,34 @@
+Merry Christmas {giftMaker},
+[[newline]]
+By now you should all know the drill...
+[[newline]]
+1. Send email/text to Supreme Master Overlord of Christmas (bagehred@sbcglobal.net)/(414-530-3325) that you have gotten your pick.
+[[newline]]
+2. Notify family members you got your name for Christmas. Relay that, if they do not have a name, they could check their SPAM folder, or get in touch with Uncle Bob. (bagehred@sbcglobal.net)/(414-530-3325)
+[[newline]]
+3. Enjoy maker spacing your gift for your beloved family member.
+[[newline]]
+This could be a duplicate email, if you have responded already I apologize and disregard, otherwise please read on.
+[[newline]]
+I hope you all enjoyed 2023, Angie & I got to do some traveling outside of the Gehred family trip to CO. We did a little bike packing to Harrington Beach State park, and another trip to Kohler-Andrae state park. 
+[[newline]]
+Interesting news on the Christmas front, the Gehred Nation has expanded this year by adding a few new people. Two new little cuties, Iris and Evelyn, and one big cutie Kevin Murray (Maddy)!
+[[newline]]
+As acting Supreme Master Overlord of Christmas we are allowing you {giftMaker} one and only one option, make the best $5 gift you can for your person.
+[[newline]]
+It is your responsibility to be sure that your person will have “something” to open by Christmas day.
+[[newline]]
+Love,
+[[newline]]
+Supreme Master Overlord of Christmas
+[[newline]]       
+Important Dates:
+[[newline]]
+Souper Saturday: November 25th anytime after 3 pm dinner around 5 ish
+[[newline]]
+Christmas Sing - A - Long: December 16th anytime after 3 pm
+[[newline]]
+Gehred Nation Christmas: Monday December 27th at Schultzee's anytime after 2 pm
+[[newline]]
+[[newline]]
+{pickMessage}

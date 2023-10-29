@@ -250,6 +250,18 @@
     },
     {
         "Key": {
+            "FirstName": "Iris",
+            "LastName": "Savarese-Gehred",
+            "Birthday": "2023-09-23T00:00:00"
+        },
+        "Emails": [
+            "lewis.savarese@gmail.com",
+            "kgehred@gmail.com"
+        ],
+        "ShouldBeContacted": true
+    },
+    {
+        "Key": {
             "FirstName": "Kerstin",
             "LastName": "Dwyer",
             "Birthday": "1994-10-20T00:00:00"
@@ -389,8 +401,7 @@
             "Birthday": "1958-10-04T00:00:00"
         },
         "Emails": [
-            "gehredp@gmail.com",
-            "pgehred@hotmail.com"
+            "gehredp@gmail.com"
         ],
         "ShouldBeContacted": true
     },
@@ -469,6 +480,18 @@
             "Birthday": "1992-06-24T00:00:00"
         },
         "Emails": [
+            "graeme.roberts@valpo.edu"
+        ],
+        "ShouldBeContacted": true
+    },
+    {
+        "Key": {
+            "FirstName": "Evelyn",
+            "LastName": "Roberts",
+            "Birthday": "2023-03-04T00:00:00"
+        },
+        "Emails": [
+            "teryn.gehred@valpo.edu",
             "graeme.roberts@valpo.edu"
         ],
         "ShouldBeContacted": true
