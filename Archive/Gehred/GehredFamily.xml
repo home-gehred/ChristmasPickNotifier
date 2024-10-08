@@ -48,8 +48,15 @@
     <Children>
       <Person firstname="Maddy" lastname="Gehred" birthday="11/7/1991" id="6279C11D-5DFD-464A-BC52-444283970FD6"/>
       <Person firstname="Kevin" lastname="Murray" birthday="4/13/1993" id="1fdac99d-6272-4773-9817-e7c527ec9f18"/>
+    </Children>
+  </Family>
+  <Family>
+    <FamilyName>CC and Michael Gehred-Thorpe</FamilyName>
+    <Parents>
       <Person firstname="Cecilia" lastname="Gehred" birthday="10/7/1993" id="BCF99C36-5A98-4AD7-9D9C-2F12C896A32A"/>
       <Person firstname="Michael" lastname="Thorpe" birthday="11/16/1993" id="37697fcc-279d-41de-ab9b-ed1f9087b528"/>
+    </Parents>
+    <Children>
     </Children>
   </Family>
   <Family>
@@ -58,15 +65,22 @@
       <Person firstname="Larisa" lastname="Gehred" birthday="1/12/1963" id="95DC75E6-7F99-4A38-AD00-E39B5D9285F2"/>
     </Parents>
     <Children>
-      <Person firstname="Natalie" lastname="Gehred" birthday="10/10/1995" id="2E3F5728-82DA-4119-832E-50C6AAD651A7"/>
-      <Person firstname="Maria" lastname="Gehred" birthday="10/10/1995" id="F3F73538-7117-4C7F-AE13-37D1C504571A"/>
     </Children>
   </Family>
   <Family>
-    <FamilyName>Domi and Gideon Family</FamilyName>
+    <FamilyName>Natalie and Drew</FamilyName>
     <Parents>
-      <Person firstname="Domino" lastname="Gehred" birthday="9/27/1989" id="0017DE43-82C0-40A6-ABB6-FC881581B9FD"/>
-      <Person firstname="Gideon" lastname="Akinbolude" birthday="3/16/1989" id="46ddca75-5211-419c-813c-29f4b2455e97"/>
+      <Person firstname="Natalie" lastname="Gehred" birthday="10/10/1995" id="2E3F5728-82DA-4119-832E-50C6AAD651A7"/>
+      <Person firstname="Drew" lastname="Honson" birthday="10/10/1995" id="3f2ae88d-aa19-4d8e-b7a4-8790978c5303" />
+    </Parents>
+    <Children>
+    </Children>
+  </Family>
+  <Family>
+    <FamilyName>Maria and Scott</FamilyName>
+    <Parents>
+      <Person firstname="Maria" lastname="Gehred" birthday="10/10/1995" id="F3F73538-7117-4C7F-AE13-37D1C504571A"/>
+      <Person firstname="Scott" lastname="Burns" birthday="10/10/1995" id="d0c1e4d1-1ed1-457d-ae1a-10e81bcdba8e" />
     </Parents>
     <Children>
     </Children>
@@ -78,6 +92,15 @@
     </Parents>
     <Children>
       <Person firstname="Capri" lastname="Gehred" birthday="3/17/1997" id="BCFADDD9-A008-4E5F-93BC-B483E6C7CA8C"/>
+    </Children>
+  </Family>
+  <Family>
+    <FamilyName>Domi and Gideon Family</FamilyName>
+    <Parents>
+      <Person firstname="Domino" lastname="Gehred" birthday="9/27/1989" id="0017DE43-82C0-40A6-ABB6-FC881581B9FD"/>
+      <Person firstname="Gideon" lastname="Akinbolude" birthday="3/16/1989" id="46ddca75-5211-419c-813c-29f4b2455e97"/>
+    </Parents>
+    <Children>
     </Children>
   </Family>
   <Family>
@@ -144,7 +167,7 @@
     </Children>
   </Family>
   <Family>
-    <FamilyName>Katie and Lewis </FamilyName>
+    <FamilyName>Katie and Lewis</FamilyName>
     <Parents>
       <Person firstname="Katy" lastname="Savarese-Gehred" birthday="7/31/1988" id="FAD0FB10-54CA-4625-B3E4-1F13CF02A19A"/>
       <Person firstname="Lewis" lastname="Savarese-Gehred" birthday="7/31/1988" id="4BD7EB9A-9EB1-46F9-A3BC-A1EBD13C51A1"/>
@@ -155,10 +178,10 @@
     </Children>
   </Family>
   <Family>
-    <FamilyName>Nemo and Stephanie</FamilyName>
+    <FamilyName>Nemo and Stephani Gehred-O'Connell</FamilyName>
     <Parents>
-      <Person firstname="Nemo" lastname="Gehred" birthday="1/9/1986" id="E2C3E436-8075-4F17-8EDA-EEDDAFD22857"/>
-      <Person firstname="Stephanie" lastname="Brodjieski" birthday="8/7/1984" id="24D74C2A-0A85-43B5-B496-4C82C9C54891"/>
+      <Person firstname="Nemo" lastname="Gehred-O'Connell" birthday="1/9/1986" id="E2C3E436-8075-4F17-8EDA-EEDDAFD22857"/>
+      <Person firstname="Stephani" lastname="Gehred-O'Connell" birthday="8/7/1984" id="24D74C2A-0A85-43B5-B496-4C82C9C54891"/>
     </Parents>
     <Children>
     </Children>
