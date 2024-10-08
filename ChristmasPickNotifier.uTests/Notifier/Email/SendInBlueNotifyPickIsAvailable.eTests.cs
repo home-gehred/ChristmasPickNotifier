@@ -41,7 +41,7 @@ namespace ChristmasPickNotifier.uTests.Notifier.Email
         [Fact]
         public async Task GivenNotifyPickMessageWhenGmailIsUsedThenEmailIsSent()
         {
-            _logger.WriteLine("Hey Bob!");
+            _logger.WriteLine($"Hey Bob! {_sendInBlueApiKey}");
             // Arrange
             var sut = new SendInBlueNotifyPickIsAvailable(_sendInBlueApiKey);
             var content = CreateTestEmailMessage("ironmoose12@gmail.com");
