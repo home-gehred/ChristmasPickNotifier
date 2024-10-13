@@ -3,14 +3,16 @@ using System.Threading.Tasks;
 using ChristmasPickMessages;
 using ChristmasPickMessages.Messages;
 using ChristmasPickNotifier.Notifier.Email;
-using Newtonsoft.Json;
 using Xunit;
 using Xunit.Abstractions;
 using xUnitTestSecrets;
 
 namespace ChristmasPickNotifier.uTest.Notifier
 {
-    [Collection("Secrets")]
+    /// <summary>
+    /// I do not pay for SendGrid but may some day and want to keep the tests.
+    /// </summary>
+    [Collection("Secrets")] 
     public class SendGridPlainTextEmailTests : IClassFixture<SecretsConfiguration>
     {
         private readonly string _sendGridApiKey;
@@ -42,7 +44,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
         // 11/10/2018 your score is 5.3 out of 10
 
         // dotnet test --configuration debug --filter FullyQualifiedName~ChristmasPickNotifier.uTest.Notifier.SendGridPlainTextEmailTests.GivenNotifyPickMessageWhenMail
-        [Fact]
+        [Fact(Skip = "Sendgrid no long supports free sending of emails")]
         public async Task GivenNotifyPickMessageWhenMailTesterIsUsedThenEmailIsSent()
         {
             // Arrange
@@ -57,7 +59,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
 
         //ins-uhnyhrmj@isnotspam.com
         // To view report http://isnotspam.com/newlatestreport.php?email=ins-uhnyhrmj%40isnotspam.com
-        [Fact]
+        [Fact(Skip = "Sendgrid no long supports free sending of emails")]
         public async Task GivenNotifyPickMessageWhenIsNotSpamIsUsedThenEmailIsSent()
         {
             // Arrange
@@ -71,7 +73,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
         }
 
         // dotnet test --configuration debug --filter FullyQualifiedName~ChristmasPickNotifier.uTest.Notifier.SendGridPlainTextEmailTests.GivenNotifyPickMessageWhenGmailIsUsedThenEmailIsSent
-        [Fact]
+        [Fact(Skip = "Sendgrid no long supports free sending of emails")]
         public async Task GivenNotifyPickMessageWhenGmailIsUsedThenEmailIsSent()
         {
             Debugger.Break();
@@ -85,7 +87,7 @@ namespace ChristmasPickNotifier.uTest.Notifier
             Assert.True(actual.IsSuccess(), $"Expected email to send but it failed. <{actual.Message}>");
         }
 
-        [Theory]
+        [Theory(Skip = "Sendgrid no long supports free sending of emails")]
         [InlineData(new object[] { "cgehred@icloud.com" })]
         [InlineData(new object[] { "gehredp@gmail.com" })]
         [InlineData(new object[] { "ragsn3@gmail.com" })]

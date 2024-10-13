@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 
 namespace Common.ChristmasPickList
@@ -6,25 +8,12 @@ namespace Common.ChristmasPickList
 
     public interface INumberGenerator
     {
-        int GenerateNumber();
         int GenerateNumberBetweenZeroAnd(int max);
     }
 
     public class RandomNumberGenerator : INumberGenerator
     {
-        private int mMax = 0;
-        private Random mRandomNum = new Random(10);
-
-
-        public RandomNumberGenerator(int maxNumber)
-        {
-            mMax = maxNumber;
-        }
-
-        public int GenerateNumber()
-        {
-            return mRandomNum.Next(-10, mMax);
-        }
+        private Random mRandomNum = new Random();
 
         public int GenerateNumberBetweenZeroAnd(int max)
         {

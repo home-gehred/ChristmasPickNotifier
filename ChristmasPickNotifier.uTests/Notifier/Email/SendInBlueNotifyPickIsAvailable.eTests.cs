@@ -51,5 +51,22 @@ namespace ChristmasPickNotifier.uTests.Notifier.Email
             // Assert
             Assert.True(actual.IsSuccess(), $"Expected email to send but it failed. <{actual.Message}>");
         }
+
+        //ins-uhnyhrmj@isnotspam.com
+        // To view report http://isnotspam.com/newlatestreport.php?email=ins-uhnyhrmj%40isnotspam.com
+        // dotnet test --configuration debug --filter ChristmasPickNotifier.uTests.Notifier.Email.SendInBlueNotifyPickIsAvailableTests.GivenNotifyPickMessageWhenIsNotSpamIsUsedThenEmailIsSent
+        [Fact]
+        public async Task GivenNotifyPickMessageWhenIsNotSpamIsUsedThenEmailIsSent()
+        {
+            // Arrange
+            var sut = new SendInBlueNotifyPickIsAvailable(_sendInBlueApiKey);
+            var content = CreateTestEmailMessage("ins-uhnyhrmj@isnotspam.com");
+            var testEnvelope = new Envelope(content);
+            // Act
+            var actual = await sut.Notify(testEnvelope);
+            // Assert
+            Assert.True(actual.IsSuccess(), $"Expected email to send but it failed. <{actual.Message}>");
+        }
+
     }
 }
