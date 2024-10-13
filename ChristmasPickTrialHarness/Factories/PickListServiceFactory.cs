@@ -36,7 +36,7 @@ namespace ChristmasPickTrialHarness.Factories
             PersonCollection kidList = gehredFamily.CreateChristmasKidList(xMasDay);
 
             IPickListRuleProvider kidRules = new KidListRuleProvider(gehredFamily, kidArchive, years:2);
-            IPickListService picker = new PickListServiceAdvanced(new RandomNumberGenerator(kidList.Count), kidRules, kidList);
+            IPickListService picker = new PickListServiceAdvanced(new RandomNumberGenerator(), kidRules, kidList);
             IPickListService pickerWithValidation = new PickListServiceWithValidation(
                 picker,
                 kidList,
@@ -59,7 +59,7 @@ namespace ChristmasPickTrialHarness.Factories
             PersonCollection adultList = gehredFamily.CreateChristmasAdultList(xMasDay);
 
             IPickListRuleProvider adultRules = new AdultListRuleProvider(gehredFamily, adultArchive, years:5);
-            IPickListService picker = new PickListServiceAdvanced(new RandomNumberGenerator(adultList.Count), adultRules, adultList);
+            IPickListService picker = new PickListServiceAdvanced(new RandomNumberGenerator(), adultRules, adultList);
             IPickListService pickerWithValidation = new PickListServiceWithValidation(
                 picker,
                 adultList,
