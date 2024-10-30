@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using ChristmasPickPublisher.CommandLineOptions;
-using ChristmasPickPublisher.Commands.EmailContacts;
 using ChristmasPickPublisher.Commands.PublishChristmasPicks;
 using CommandLine;
 using CommandLine.Text;
@@ -14,16 +13,13 @@ namespace ChristmasPickPublisher
     public class CommandFactory : BackgroundService
     {
         private readonly IArgumentProvider _argumentProvider;
-        private readonly IEmailContacts _emailContacts;
         private readonly IPublishChristmasPicks _christmasPublisher;
         
         public CommandFactory(
             IArgumentProvider argumentProvider,
-            IEmailContacts emailContacts,
             IPublishChristmasPicks christmasPublisher)
         {
             _argumentProvider = argumentProvider;
-            _emailContacts = emailContacts;
             _christmasPublisher = christmasPublisher;
         }
 
@@ -47,7 +43,7 @@ namespace ChristmasPickPublisher
 
         private async Task<int> CreateCommand(CancellationToken token)
         {
-            var verbs = new Type[] { typeof(ChristmasPickPublisherOptions), typeof(EmailContactsOptions)};
+            var verbs = new Type[] { typeof(ChristmasPickPublisherOptions)};
             var args = await _argumentProvider.GetArguments();
             
             var parser = new CommandLine.Parser(with => with.HelpWriter = null);
@@ -86,11 +82,6 @@ namespace ChristmasPickPublisher
             if (options.GetType() == typeof(ChristmasPickPublisherOptions))
             {
                 return _christmasPublisher.Publish((ChristmasPickPublisherOptions)options, source.Token);
-            }
-
-            if (options.GetType() == typeof(EmailContactsOptions))
-            {
-                return _emailContacts.EmailAllContectsAsync((EmailContactsOptions)options, source.Token);
             }
 
             throw new NotSupportedException($"The {options.GetType()} is not supported.");

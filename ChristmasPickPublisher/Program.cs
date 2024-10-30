@@ -23,7 +23,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ChristmasPickCommon.Configuration;
 using ChristmasPickPublisher.Configuration;
-using ChristmasPickPublisher.Commands.EmailContacts;
 using ChristmasPickPublisher.Commands.PublishChristmasPicks;
 
 namespace ChristmasPickPublisher
@@ -63,11 +62,9 @@ namespace ChristmasPickPublisher
                 })
             .ConfigureServices((_, services) => {
                     services.AddTransient<IProvideConfiguration, ProvideMicrosoftConfiguration>();
-                    services.AddTransient<IEmailContacts, EmailContactService>();
                     services.AddTransient<IPublishChristmasPicks, PublishChristmasPicksService>();
                     services.AddSingleton<IArgumentProvider>(argumentProvider);
                     services.AddHostedService<CommandFactory>();
-                    //services.AddHostedService<PublishChristmasPicks>();
                 });
                 
         }
