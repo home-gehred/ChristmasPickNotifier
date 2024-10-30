@@ -103,7 +103,8 @@ namespace ChristmasPickPublisher.Commands.PublishChristmasPicks
             {
                 return Task.CompletedTask;
             }
-            
+            this._options = options;
+
             var xmasDayValid = XMasDay.TryParse(options.Year, out _xmasDay);
             if (!xmasDayValid)
             {
@@ -174,6 +175,7 @@ namespace ChristmasPickPublisher.Commands.PublishChristmasPicks
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var emailCount = 0;
+            var totalEmailSent = 0;
             Person giftMaker = null;
             try
             {
@@ -194,7 +196,17 @@ namespace ChristmasPickPublisher.Commands.PublishChristmasPicks
                         var htmlEmailBody = CreateHTMLTextEmailBody(giftMaker, giftMessage);
                         emailCount += await EmailGiftMakerPickMessage(giftMaker, emailSubject, htmlEmailBody, plainTextEmailBody);
 
+                        _logger.LogInformation($"Sent {emailCount}(s) to {giftMaker}");
+
                         _emailAddressProvider.SetContactStatus(giftMaker, emailCount <= 0);
+
+                        totalEmailSent += emailCount;
+
+                    }
+
+                    if (totalEmailSent >= _options.MaxEmail) {
+                        _logger.LogInformation($"Publisher has sent {totalEmailSent} (s) which is greater then or equal to {_options.MaxEmail}. Terminating program.");
+                        break;
                     }
                 }
 
@@ -214,7 +226,7 @@ namespace ChristmasPickPublisher.Commands.PublishChristmasPicks
             finally
             {
                 _emailAddressProvider.Save();
-                _logger.LogInformation($"Sent {emailCount} emails this run");
+                _logger.LogInformation($"Sent {totalEmailSent} emails this run");
             }
 
 

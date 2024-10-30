@@ -58,7 +58,7 @@ namespace ChristmasPickPublisher.Commands.EmailContacts
                 PlainTextBody = plainTextMsg,
                 Name = "C",
                 NotificationType = NotifyType.Email,
-                Subject = "IMPORTANT: Gehred Nation Christmas Pick for 2021",
+                Subject = "IMPORTANT: Gehred Nation Christmas Pick for 2024",
                 ToAddress = To
             };
             return content;
@@ -71,7 +71,10 @@ namespace ChristmasPickPublisher.Commands.EmailContacts
             var emailer = new SendInBlueNotifyPickIsAvailable(sendInBlueApiKey);
             var familyContacts = _cfgProvider.GetConfiguration(CfgKey.FamilyContacts);
             var emailAddressProvider = new JsonFileEmailAddressProvider(familyContacts);
-
+            var maxEmailsToSend = 250;
+            var emailsSent = 0;
+            _logger.LogInformation($"Send in blue api key = {sendInBlueApiKey}");
+/*
             foreach(var person in emailAddressProvider.GetAllPeopleWithContact())
             {
                 var emailAddresses = emailAddressProvider.GetEmailAddresses(person).ToList();
@@ -86,6 +89,7 @@ namespace ChristmasPickPublisher.Commands.EmailContacts
                         
                         var testEnvelope = new Envelope(emailMessage);
                         var emailSendStatus = await emailer.Notify(testEnvelope);
+                        emailsSent++;
                         // For Debug
                         //var emailSendStatus = NotifierResultFactory.CreateFailed("Just testing");
                         //var emailSendStatus = NotifierResultFactory.Success;
@@ -101,14 +105,23 @@ namespace ChristmasPickPublisher.Commands.EmailContacts
                         
                         await Task.Delay(TimeSpan.FromSeconds(_options.WaitTimeInSeconds));
 
+                        if (emailsSent >= maxEmailsToSend)
+                            break;
+
                     }
                     if (anySuccess)
                     {
                         emailAddressProvider.SetContactStatus(person, shouldBeContacted: false);
                     }
                 }
-            }
 
+                if (emailsSent >= maxEmailsToSend) {
+                    _logger.LogInformation($"Max number of emails have been reached, {maxEmailsToSend}. Operation terminated, please send more tomorrow.");
+                    break;
+                }
+                    
+            }
+*/
             return;
         }
     }
