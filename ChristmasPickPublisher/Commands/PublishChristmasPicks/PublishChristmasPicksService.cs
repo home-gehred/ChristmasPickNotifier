@@ -194,9 +194,9 @@ namespace ChristmasPickPublisher.Commands.PublishChristmasPicks
                             
                         var plainTextEmailBody = CreatePlainTextEmailBody(giftMaker, giftMessage);
                         var htmlEmailBody = CreateHTMLTextEmailBody(giftMaker, giftMessage);
-                        emailCount += await EmailGiftMakerPickMessage(giftMaker, emailSubject, htmlEmailBody, plainTextEmailBody);
+                        emailCount = await EmailGiftMakerPickMessage(giftMaker, emailSubject, htmlEmailBody, plainTextEmailBody);
 
-                        _logger.LogInformation($"Sent {emailCount}(s) to {giftMaker}");
+                        _logger.LogInformation($"Sent {emailCount} email(s) to {giftMaker}");
 
                         _emailAddressProvider.SetContactStatus(giftMaker, emailCount <= 0);
 
@@ -205,7 +205,7 @@ namespace ChristmasPickPublisher.Commands.PublishChristmasPicks
                     }
 
                     if (totalEmailSent >= _options.MaxEmail) {
-                        _logger.LogInformation($"Publisher has sent {totalEmailSent} (s) which is greater then or equal to {_options.MaxEmail}. Terminating program.");
+                        _logger.LogInformation($"Publisher has sent {totalEmailSent} email(s) which is greater then or equal to {_options.MaxEmail}. Terminating program.");
                         break;
                     }
                 }
