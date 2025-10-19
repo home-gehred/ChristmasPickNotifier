@@ -32,7 +32,7 @@ namespace Common.Test.ChristmasPickList
       StreamReader rawData = new StreamReader(myStream);
       string actual = rawData.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<XMasPick>\n  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\n  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\n</XMasPick>", actual);
+      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<XMasPick>\r\n  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n</XMasPick>", actual);
 
     }
 
@@ -44,7 +44,7 @@ namespace Common.Test.ChristmasPickList
 
       XMasPick expectedPick = new XMasPick(Bob, Angie);
       XMasPick actual = null;
-      byte[] serializedPickItem = ConvertStringToByteArray("<?xml version=\"1.0\"?>\n<XMasPick>\n  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\n  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\n</XMasPick>");
+      byte[] serializedPickItem = ConvertStringToByteArray("<?xml version=\"1.0\"?>\r\n<XMasPick>\r\n  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n</XMasPick>");
       Stream testData = new MemoryStream(serializedPickItem);
       XmlSerializer xml = new XmlSerializer(typeof(XMasPick));
       actual = (XMasPick)xml.Deserialize(testData);

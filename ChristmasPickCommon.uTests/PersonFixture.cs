@@ -41,7 +41,7 @@ namespace Common.Test
       StreamReader junk = new StreamReader(myStream);
       string actual = junk.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />", actual);
+      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />", actual);
 
     }
 

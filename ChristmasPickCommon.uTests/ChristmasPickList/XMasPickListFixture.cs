@@ -33,7 +33,7 @@ namespace Common.Test.ChristmasPickList
       Stream myStream = new BufferedStream(new MemoryStream(new byte[2048], true), 2048);
       if (myStream != null)
       {
-        XmlSerializer xml = new XmlSerializer(typeof(XMasPickList));
+        XmlSerializer xml = new XmlSerializer(typeof(XMasPickList) );
         xml.Serialize(myStream, testPickList);
       }
 
@@ -42,7 +42,7 @@ namespace Common.Test.ChristmasPickList
       StreamReader rawData = new StreamReader(myStream);
       string actual = rawData.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<XMasPickList>\n  <XMasDate>12/25/2001</XMasDate>\n  <Picks>\n    <Pick>\n      <Subject firstname=\"Tom\" lastname=\"Gehred\" birthday=\"3/5/1936\" id=\"11111111-6666-3333-4444-555555555555\" />\n      <Recipient firstname=\"Mike\" lastname=\"Gehred\" birthday=\"3/18/1954\" id=\"11111111-7777-3333-4444-555555555555\" />\n    </Pick>\n    <Pick>\n      <Subject firstname=\"Mike\" lastname=\"Gehred\" birthday=\"3/18/1954\" id=\"11111111-7777-3333-4444-555555555555\" />\n      <Recipient firstname=\"Jim\" lastname=\"Gehred\" birthday=\"2/13/1963\" id=\"11111111-8888-3333-4444-555555555555\" />\n    </Pick>\n    <Pick>\n      <Subject firstname=\"Jim\" lastname=\"Gehred\" birthday=\"2/13/1963\" id=\"11111111-8888-3333-4444-555555555555\" />\n      <Recipient firstname=\"Tony\" lastname=\"Ingrassia\" birthday=\"3/3/1901\" id=\"11111111-9999-3333-4444-555555555555\" />\n    </Pick>\n    <Pick>\n      <Subject firstname=\"Tony\" lastname=\"Ingrassia\" birthday=\"3/3/1901\" id=\"11111111-9999-3333-4444-555555555555\" />\n      <Recipient firstname=\"Tom\" lastname=\"Gehred\" birthday=\"3/5/1936\" id=\"11111111-6666-3333-4444-555555555555\" />\n    </Pick>\n  </Picks>\n</XMasPickList>", actual);
+      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<XMasPickList>\r\n  <XMasDate>12/25/2001</XMasDate>\r\n  <Picks>\r\n    <Pick>\r\n      <Subject firstname=\"Tom\" lastname=\"Gehred\" birthday=\"3/5/1936\" id=\"11111111-6666-3333-4444-555555555555\" />\r\n      <Recipient firstname=\"Mike\" lastname=\"Gehred\" birthday=\"3/18/1954\" id=\"11111111-7777-3333-4444-555555555555\" />\r\n    </Pick>\r\n    <Pick>\r\n      <Subject firstname=\"Mike\" lastname=\"Gehred\" birthday=\"3/18/1954\" id=\"11111111-7777-3333-4444-555555555555\" />\r\n      <Recipient firstname=\"Jim\" lastname=\"Gehred\" birthday=\"2/13/1963\" id=\"11111111-8888-3333-4444-555555555555\" />\r\n    </Pick>\r\n    <Pick>\r\n      <Subject firstname=\"Jim\" lastname=\"Gehred\" birthday=\"2/13/1963\" id=\"11111111-8888-3333-4444-555555555555\" />\r\n      <Recipient firstname=\"Tony\" lastname=\"Ingrassia\" birthday=\"3/3/1901\" id=\"11111111-9999-3333-4444-555555555555\" />\r\n    </Pick>\r\n    <Pick>\r\n      <Subject firstname=\"Tony\" lastname=\"Ingrassia\" birthday=\"3/3/1901\" id=\"11111111-9999-3333-4444-555555555555\" />\r\n      <Recipient firstname=\"Tom\" lastname=\"Gehred\" birthday=\"3/5/1936\" id=\"11111111-6666-3333-4444-555555555555\" />\r\n    </Pick>\r\n  </Picks>\r\n</XMasPickList>", actual);
 
     }
 
