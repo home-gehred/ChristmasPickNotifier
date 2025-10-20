@@ -18,6 +18,7 @@ namespace xUnitTestSecrets
         public void Dispose()
         {
             // ... clean up test data from the database ...
+            GC.SuppressFinalize(this);
         }
 
         public void DefaultConfiguration()

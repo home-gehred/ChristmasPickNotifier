@@ -44,7 +44,7 @@ namespace ChristmasPickNotifier.uTests.Notifier.Email
             _logger.WriteLine($"Hey Bob! {_sendInBlueApiKey}");
             // Arrange
             var sut = new SendInBlueNotifyPickIsAvailable(_sendInBlueApiKey);
-            var content = CreateTestEmailMessage("ironmoose12@gmail.com");
+            var content = CreateTestEmailMessage("bagehred@gmail.com");
             var testEnvelope = new Envelope(content);
             // Act
             var actual = await sut.Notify(testEnvelope);
