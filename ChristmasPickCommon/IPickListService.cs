@@ -31,7 +31,7 @@ namespace Common.ChristmasPickList
 
         public XMasPickList CreateChristmasPick(DateTime evaluationDate)
         {
-            int MaxAttemptsBeforeGivingUp = 1000;
+            int MaxAttemptsBeforeGivingUp = 2000;
             PersonCollection alreadyPicked = new PersonCollection();
             XMasPickList thisYearPickList = new XMasPickList(evaluationDate);
             SortPickList(this.familyList, evaluationDate);

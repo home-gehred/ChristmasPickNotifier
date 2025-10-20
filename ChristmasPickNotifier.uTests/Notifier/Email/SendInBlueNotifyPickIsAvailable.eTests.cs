@@ -52,7 +52,7 @@ namespace ChristmasPickNotifier.uTests.Notifier.Email
             Assert.True(actual.IsSuccess(), $"Expected email to send but it failed. <{actual.Message}>");
         }
 
-        //ins-uhnyhrmj@isnotspam.com
+        //test-sou7q6@experte-test.com
         // To view report http://isnotspam.com/newlatestreport.php?email=ins-uhnyhrmj%40isnotspam.com
         // dotnet test --configuration debug --filter ChristmasPickNotifier.uTests.Notifier.Email.SendInBlueNotifyPickIsAvailableTests.GivenNotifyPickMessageWhenIsNotSpamIsUsedThenEmailIsSent
         [Fact]
@@ -60,7 +60,7 @@ namespace ChristmasPickNotifier.uTests.Notifier.Email
         {
             // Arrange
             var sut = new SendInBlueNotifyPickIsAvailable(_sendInBlueApiKey);
-            var content = CreateTestEmailMessage("ins-uhnyhrmj@isnotspam.com");
+            var content = CreateTestEmailMessage("test-sou7q6@experte-test.com");
             var testEnvelope = new Envelope(content);
             // Act
             var actual = await sut.Notify(testEnvelope);

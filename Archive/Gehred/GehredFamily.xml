@@ -46,8 +46,15 @@
       <Person firstname="John" lastname="Gehred" birthday="2/23/1960" id="2B823E4E-2A7B-435F-B366-53F2FB8C1055"/>
     </Parents>
     <Children>
+    </Children>
+  </Family>
+  <Family>
+    <FamilyName>Lake County Gehred-Murray</FamilyName>
+    <Parents>
       <Person firstname="Maddy" lastname="Gehred" birthday="11/7/1991" id="6279C11D-5DFD-464A-BC52-444283970FD6"/>
       <Person firstname="Kevin" lastname="Murray" birthday="4/13/1993" id="1fdac99d-6272-4773-9817-e7c527ec9f18"/>
+    </Parents>
+    <Children>
     </Children>
   </Family>
   <Family>
