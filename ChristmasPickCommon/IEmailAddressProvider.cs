@@ -124,10 +124,13 @@ namespace Common
         public void Save()
         {
             using (StreamWriter file = File.CreateText(pathToFamilyContacts))
+            using (var writer = new JsonTextWriter(file))
             {
+                writer.Formatting = Formatting.Indented;
                 JsonSerializer serializer = new JsonSerializer();
+
                 //serialize object directly into file stream
-                serializer.Serialize(file, contacts.Values);
+                serializer.Serialize(writer, contacts.Values);
             }
         }
         public IEnumerable<EmailAddress> GetEmailAddresses(Person x)

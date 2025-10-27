@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasPickMessages", "ChristmasPickMessages\ChristmasPickMessages.csproj", "{DEE70595-962C-46AB-9AB0-27C07A4B2EF0}"
 EndProject
@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasPickUtil", "ChristmasPickUtil\ChristmasPickUtil.csproj", "{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,6 +146,18 @@ Global
 		{E3520B75-1C0E-487B-9FF3-20F94A34D764}.Release|x64.Build.0 = Release|Any CPU
 		{E3520B75-1C0E-487B-9FF3-20F94A34D764}.Release|x86.ActiveCfg = Release|Any CPU
 		{E3520B75-1C0E-487B-9FF3-20F94A34D764}.Release|x86.Build.0 = Release|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Debug|x64.Build.0 = Debug|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Debug|x86.Build.0 = Debug|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Release|x64.ActiveCfg = Release|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Release|x64.Build.0 = Release|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Release|x86.ActiveCfg = Release|Any CPU
+		{91BE9C7A-88AD-C4AA-CA61-A3B3DC20E53B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
