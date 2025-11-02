@@ -1,5 +1,8 @@
 ﻿using ChristmasPickCommon;
 using ChristmasPickCommon.Configuration;
+using ChristmasPickMessages;
+using ChristmasPickMessages.Messages;
+using ChristmasPickNotifier.Notifier;
 using ChristmasPickUtil.Configuration;
 using Common;
 using Common.ChristmasPickList;
@@ -20,6 +23,7 @@ namespace ChristmasPickUtil.Verbs.ChristmasPickPublisher
         public Publish(IConfiguration config, ILogger<PublishOptions> logger) 
             : base(config, logger)
         {
+
         }
 
         private XMasPickList GetXmasPickList(XMasDay christmasDay, XMasPickListType listType)
@@ -41,24 +45,25 @@ namespace ChristmasPickUtil.Verbs.ChristmasPickPublisher
             return archive.GetPickListForYear(christmasDay);
         }
 
-        public override Task<int> DoVerbAsync(PublishOptions options)
+        public override async Task<int> DoVerbAsync(PublishOptions options)
         {
             var xmasDayValid = XMasDay.TryParse(options.Year, out XMasDay xmasDay);
             if (!xmasDayValid)
             {
                 _logger.LogError("Could not convert Year: {year} to XMasDay type.", options.Year);
-                return Task.FromResult(1);
+                return -1;
             }
             if (!XMasPickListType.TryParse(options.Type.ToString(), out XMasPickListType pickListType))
             {
                 _logger.LogError("Could not convert list type: {list} to XMasDay list type.", options.Type);
-                return Task.FromResult(1);
+                return -2;
             }
             
             _logger.LogInformation("Command is publishing picks for {year} for {listtype}", xmasDay, pickListType);
             var pickListToPublish = GetXmasPickList(xmasDay, pickListType);
             var emailAddressProvider = BuildEmailAddressProvider();
             var emailTemplate = GetEmailTemplate();
+            var notifier = BuildNotifier();
 
             var emailCount = 0;
             var totalEmailSent = 0;
@@ -81,14 +86,18 @@ namespace ChristmasPickUtil.Verbs.ChristmasPickPublisher
 
                         var plainTextEmailBody = CreatePlainTextEmailBody(giftMaker, giftMessage, emailTemplate);
                         var htmlEmailBody = CreateHTMLTextEmailBody(giftMaker, giftMessage, emailTemplate);
-                        emailCount++; //await EmailGiftMakerPickMessage(giftMaker, emailSubject, htmlEmailBody, plainTextEmailBody);
+                        emailCount = await EmailGiftMakerPickMessage(
+                            emailAddressProvider, 
+                            notifier,
+                            giftMaker,
+                            emailSubject,
+                            htmlEmailBody, plainTextEmailBody);
 
                         _logger.LogInformation("Sent {emailCount} email(s) to {giftMaker}", emailCount, giftMaker);
 
                         emailAddressProvider.SetContactStatus(giftMaker, emailCount <= 0);
 
                         totalEmailSent += emailCount;
-
                     }
                     else
                     {
@@ -122,7 +131,7 @@ namespace ChristmasPickUtil.Verbs.ChristmasPickPublisher
                 _logger.LogInformation("Sent {totalEmailSent} emails this run, and skipped {skipped}", totalEmailSent, totalGiftMakerSkipped);
             }
 
-            return Task.FromResult(0);
+            return 0;
         }
     }
 }

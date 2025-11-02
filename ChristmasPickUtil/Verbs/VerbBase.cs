@@ -1,4 +1,8 @@
-﻿using ChristmasPickUtil.Configuration;
+﻿using ChristmasPickMessages;
+using ChristmasPickMessages.Messages;
+using ChristmasPickNotifier.Notifier;
+using ChristmasPickNotifier.Notifier.Email;
+using ChristmasPickUtil.Configuration;
 using Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -24,6 +28,12 @@ namespace ChristmasPickUtil.Verbs
         {
             var familyContacts = _cfgProvider.GetConfiguration(CfgKey.FamilyContacts);
             return new JsonFileEmailAddressProvider(familyContacts);
+        }
+
+        protected INotifier BuildNotifier()
+        {
+            var sendInBlueApiKey = _cfgProvider.GetConfiguration(CfgKey.SendInBlueApiKey);
+            return new SendInBlueNotifyPickIsAvailable(sendInBlueApiKey);
         }
 
         protected string GetEmailTemplate()
@@ -52,6 +62,40 @@ namespace ChristmasPickUtil.Verbs
             return $"<!DOCTYPE html><html><body>{htmlMsg}</body></html>";
         }
 
+        protected async Task<int> EmailGiftMakerPickMessage(IEmailAddressProvider emailAddressProvider, INotifier notifier, Person giftMaker, string subjectLine, string htmlBody, string plainTextBody)
+        {
+            // Using the Person object lookup email.
+            var successfulEmailSentCount = 0;
+            var emailAddresses = emailAddressProvider.GetEmailAddresses(giftMaker);
+            foreach (var emailAddress in emailAddresses)
+            {
+                var content = new PickAvailableMessage
+                {
+                    HtmlBody = htmlBody,
+                    PlainTextBody = plainTextBody,
+                    Name = "C",
+                    NotificationType = NotifyType.Email,
+                    Subject = subjectLine,
+                    ToAddress = emailAddress
+                };
+                var testEnvelope = new Envelope(content);
+                var emailSendStatus = await notifier.Notify(testEnvelope);
+                //var emailSendStatus = NotifierResultFactory.Success;
+
+                if (!emailSendStatus.IsSuccess())
+                {
+                    _logger.LogError("{emailAddress} Status: Error: {statusMessage}", emailAddress, emailSendStatus.Message);
+                }
+                else
+                {
+                    _logger.LogInformation("{emailAddress} Status: Ok", emailAddress);
+                    successfulEmailSentCount++;
+                }
+                await Task.Delay(TimeSpan.FromSeconds(10));
+            }
+
+            return successfulEmailSentCount;
+        }
 
         public abstract Task<int> DoVerbAsync(T options);
     }
