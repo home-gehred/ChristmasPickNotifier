@@ -4,7 +4,7 @@ using Common.ChristmasPickList;
 using Common.ChristmasPickList.Rules;
 using Common;
 
-namespace ChristmasPickTrialHarness.Factories.RuleProviders
+namespace ChristmasPickUtil.Verbs.ChristmasPick.Factories.RuleProviders
 {
     public class AdultListRuleProvider : IPickListRuleProvider
     {

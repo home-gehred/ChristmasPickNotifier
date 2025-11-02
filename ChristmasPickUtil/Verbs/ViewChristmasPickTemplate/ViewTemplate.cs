@@ -1,6 +1,5 @@
 ﻿using Common;
 using Common.ChristmasPickList;
-using Common.ChristmasPickList.Rules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Reflection;

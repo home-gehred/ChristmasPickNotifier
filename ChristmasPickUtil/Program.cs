@@ -1,4 +1,5 @@
-﻿using ChristmasPickUtil.Verbs.ChristmasPickPublisher;
+﻿using ChristmasPickUtil.Verbs.ChristmasPick;
+using ChristmasPickUtil.Verbs.ChristmasPickPublisher;
 using ChristmasPickUtil.Verbs.ResetChristmasPickPublisher;
 using ChristmasPickUtil.Verbs.ViewChristmasPickTemplate;
 using CommandLine;
@@ -36,11 +37,13 @@ class Program
         var exitCode = CommandLine.Parser.Default.ParseArguments<
            PublishOptions,
            ResetOptions,
-           ViewTemplateOptions>(args)
+           ViewTemplateOptions,
+           PickOptions>(args)
            .MapResult(
                (PublishOptions options) => RunPublish(config, loggerFactory, options),
                (ResetOptions options) => RunReset(config, loggerFactory, options),
                (ViewTemplateOptions options) => RunViewTemplate(config, loggerFactory, options),
+               (PickOptions options) => RunPick(config, loggerFactory, options),
                errors => 1
            );
 
@@ -65,6 +68,13 @@ class Program
     {
         var logger = loggerFactory.CreateLogger<ViewTemplateOptions>();
         var verb = new ViewTemplate(config, logger);
+        return verb.DoVerbAsync(options).GetAwaiter().GetResult();
+    }
+
+    static int RunPick(IConfiguration config, ILoggerFactory loggerFactory, PickOptions options)
+    {
+        var logger = loggerFactory.CreateLogger<PickOptions>();
+        var verb = new Pick(config, logger);
         return verb.DoVerbAsync(options).GetAwaiter().GetResult();
     }
 

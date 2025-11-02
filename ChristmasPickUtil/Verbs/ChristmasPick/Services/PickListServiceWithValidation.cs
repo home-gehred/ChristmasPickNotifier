@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Common;
 using Common.ChristmasPickList;
 
-namespace ChristmasPickTrialHarness.Services
+namespace ChristmasPickUtil.Verbs.ChristmasPick.Services
 {
     public class PickListServiceWithValidation : IPickListService
     {
@@ -18,7 +18,7 @@ namespace ChristmasPickTrialHarness.Services
             PersonCollection personList,
             IXMasArchivePersister archivePersister,
             XMasArchive archive,
-            ILogger<CreateChristmasPicks> logger)
+            ILogger<PickOptions> logger)
         {
             this.innerPickListService = innerPickListService ?? throw new ArgumentNullException(nameof(innerPickListService));
             this.personList = personList ?? throw new ArgumentNullException(nameof(personList));

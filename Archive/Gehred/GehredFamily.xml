@@ -25,6 +25,7 @@
     <Children>
       <Person firstname="Sarah" lastname="Schultz" birthday="9/7/1988" id="F6F87822-6B6B-4C10-80F8-98C211865EFE"/>
       <Person firstname="Rachel" lastname="Schultz" birthday="2/8/1991" id="2E6A9B0D-56E3-41B9-957B-01551272D35C"/>
+      <Person firstname="Jenna" lastname="Kassnel" birthday="6/19/1991" id="21588561-2ccc-4925-841b-fab59c2fe98c"/>
     </Children>
   </Family>
   <Family>

@@ -14,11 +14,7 @@ namespace ChristmasPickUtil.Configuration
         public string GetConfiguration(string configurationKey)
         {
             var value = configuration[configurationKey];
-            if (value == null)
-            {
-                throw new ArgumentNullException($"The configuration key <{configurationKey}> is not found.");
-            }
-            return value;
+            return value ?? throw new ArgumentNullException($"The configuration key <{configurationKey}> is not found.");
         }
     }
 

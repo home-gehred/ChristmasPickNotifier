@@ -1,41 +1,44 @@
-using System;
-using Microsoft.Extensions.Logging;
 using ChristmasPickCommon;
-using Common;
-using Common.ChristmasPickList;
 using ChristmasPickCommon.Configuration;
 using ChristmasPickCommon.Factories;
-using ChristmasPickTrialHarness.Configuration;
-using ChristmasPickTrialHarness.Factories.RuleProviders;
-using ChristmasPickTrialHarness.Services;
+using ChristmasPickUtil.Configuration;
+using ChristmasPickUtil.Verbs.ChristmasPick.Factories.RuleProviders;
+using ChristmasPickUtil.Verbs.ChristmasPick.Services;
+using Common;
+using Common.ChristmasPickList;
+using Microsoft.Extensions.Logging;
 
-namespace ChristmasPickTrialHarness.Factories
+namespace ChristmasPickUtil.Verbs.ChristmasPick.Factories
 {
     public class PickListServiceFactory : IPickListServiceFactory
     {
         private readonly IProvideConfiguration cfgProvider;
-        private readonly ILogger<CreateChristmasPicks> logger;
+        private readonly ILogger<PickOptions> logger;
+        private readonly int yearsBack;
 
         public PickListServiceFactory(
             IProvideConfiguration cfgProvider,
-            ILogger<CreateChristmasPicks> logger)
+            ILogger<PickOptions> logger,
+            int? yearsBack = null
+            )
         {
             this.cfgProvider = cfgProvider ?? throw new ArgumentNullException(nameof(cfgProvider));
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.yearsBack = yearsBack ?? 5;
         }
 
-        private IPickListService CreateKidService(XMasDay xMasDay, XMasPickListType xMasPickListType)
+        private IPickListService CreateKidService(XMasDay xMasDay)
         {
             var kidArchivePath = cfgProvider.GetConfiguration(CfgKey.KidArchivePath);
-            var familyArchivePath = cfgProvider.GetConfiguration(CfgKey.FamilyArchivePath);
+            var familyPath = cfgProvider.GetConfiguration(CfgKey.FamilyPath);
             IXMasArchivePersister kidPersister = new FileArchivePersister(kidArchivePath);
-            IFamilyProvider familyProvider = new FileFamilyProvider(familyArchivePath);
+            IFamilyProvider familyProvider = new FileFamilyProvider(familyPath);
             FamilyTree gehredFamily = familyProvider.GetFamilies();
             XMasArchive kidArchive = kidPersister.LoadArchive();
             // Create kidList
             PersonCollection kidList = gehredFamily.CreateChristmasKidList(xMasDay);
 
-            IPickListRuleProvider kidRules = new KidListRuleProvider(gehredFamily, kidArchive, years:2);
+            IPickListRuleProvider kidRules = new KidListRuleProvider(gehredFamily, kidArchive, yearsBack);
             IPickListService picker = new PickListServiceAdvanced(new RandomNumberGenerator(), kidRules, kidList);
             IPickListService pickerWithValidation = new PickListServiceWithValidation(
                 picker,
@@ -47,10 +50,10 @@ namespace ChristmasPickTrialHarness.Factories
 
         }
 
-        private IPickListService CreateAdultService(XMasDay xMasDay, XMasPickListType xMasPickListType)
+        private IPickListService CreateAdultService(XMasDay xMasDay)
         {
             var adultArchivePath = cfgProvider.GetConfiguration(CfgKey.AdultArchivePath);
-            var familyArchivePath = cfgProvider.GetConfiguration(CfgKey.FamilyArchivePath);
+            var familyArchivePath = cfgProvider.GetConfiguration(CfgKey.FamilyPath);
             IXMasArchivePersister adultPersister = new FileArchivePersister(adultArchivePath);
             IFamilyProvider familyProvider = new FileFamilyProvider(familyArchivePath);
             FamilyTree gehredFamily = familyProvider.GetFamilies();
@@ -58,7 +61,7 @@ namespace ChristmasPickTrialHarness.Factories
             // Create AdultList
             PersonCollection adultList = gehredFamily.CreateChristmasAdultList(xMasDay);
 
-            IPickListRuleProvider adultRules = new AdultListRuleProvider(gehredFamily, adultArchive, years:5);
+            IPickListRuleProvider adultRules = new AdultListRuleProvider(gehredFamily, adultArchive, yearsBack);
             IPickListService picker = new PickListServiceAdvanced(new RandomNumberGenerator(), adultRules, adultList);
             IPickListService pickerWithValidation = new PickListServiceWithValidation(
                 picker,
@@ -72,14 +75,14 @@ namespace ChristmasPickTrialHarness.Factories
 
         public IPickListService CreateService(XMasDay xMasDay, XMasPickListType xMasPickListType)
         {
-            IPickListService picker = null;
+            IPickListService? picker = null;
             if (xMasPickListType == XMasPickListType.Kid)
             {
-                picker = CreateKidService(xMasDay, xMasPickListType);
+                picker = CreateKidService(xMasDay);
             }
             if (xMasPickListType == XMasPickListType.Adult)
             {
-                picker = CreateAdultService(xMasDay, xMasPickListType);
+                picker = CreateAdultService(xMasDay);
             }
 
             if (picker == null)

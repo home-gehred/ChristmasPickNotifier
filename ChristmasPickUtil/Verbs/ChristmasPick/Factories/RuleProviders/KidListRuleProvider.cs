@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
+using Common;
 using Common.ChristmasPickList;
 using Common.ChristmasPickList.Rules;
-using Common;
 
-namespace ChristmasPickTrialHarness.Factories.RuleProviders
+namespace ChristmasPickUtil.Verbs.ChristmasPick.Factories.RuleProviders
 {
     public class KidListRuleProvider : IPickListRuleProvider
     {
