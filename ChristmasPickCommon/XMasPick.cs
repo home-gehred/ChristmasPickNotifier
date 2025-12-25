@@ -107,6 +107,8 @@ namespace Common.ChristmasPickList
       }
     }
 
+    public string PickMessage => $"{Subject} buys for {Recipient}";
+
     public override bool Equals(object o)
     {
       if (o.GetType() == typeof(XMasPick))

@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "C#: ChristmasPickUtil Debug",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickUtil/bin/Debug/net9.0/ChristmasPickUtil",
+            "args": [
+                "Report",
+                "--year",
+                "2025",
+                "--type",
+                "Adult"
+            ]
+        },
+        {
             "name": "Christmas Pick Trial Harness (Kid)",
             "type": "coreclr",
             "request": "launch",
@@ -20,117 +34,6 @@
             "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net8.0",
             "console": "internalConsole",
             "stopAtEntry": false
-        },
-        {
-            "name": "Christmas Pick Trial Harness (Adult)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net8.0/ChristmasPickTrialHarness.dll",
-            "args": [
-                "publish",
-                "--year",
-                "2024",
-                "--type",
-                "adult"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickTrialHarness/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": "Publish XmasPicks (Adult)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0/ChristmasPickPublisher.dll",
-            "args": [
-                "publish",
-                "--year",
-                "2024",
-                "--list",
-                "adult",
-                "--max",
-                "-1"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": "Publish XmasPicks (kid)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0/ChristmasPickPublisher.dll",
-            "args": [
-                "publish",
-                "--year",
-                "2024",
-                "--list",
-                "kid",
-                "--max",
-                "-1"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Launch (emailContacts defaults)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0/ChristmasPickPublisher.dll",
-            "args": [
-                "emailcontacts",
-                "--template",
-                "/Users/cgehrer/Code/ChristmasPickNotifier/Archive/contactEmail.txt"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Launch (emailContacts help)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0/ChristmasPickPublisher.dll",
-            "args": [
-                "emailcontacts",
-                "--help"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Launch (version)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0/ChristmasPickPublisher.dll",
-            "args": [
-                "version"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Launch (help)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0/ChristmasPickPublisher.dll",
-            "args": [
-                "help"
-            ],
-            "cwd": "${workspaceFolder}/ChristmasPickPublisher/bin/Debug/net8.0",
-            "console": "internalConsole",
-            "stopAtEntry": false
         }
-
     ]
 }

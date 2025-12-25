@@ -334,3 +334,4 @@ secrets.*
 secret.*
 local.settings.json
 .DS_Store
+**/Archive/Reports/*

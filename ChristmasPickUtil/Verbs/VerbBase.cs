@@ -1,9 +1,12 @@
-﻿using ChristmasPickMessages;
+﻿using ChristmasPickCommon;
+using ChristmasPickMessages;
 using ChristmasPickMessages.Messages;
 using ChristmasPickNotifier.Notifier;
 using ChristmasPickNotifier.Notifier.Email;
 using ChristmasPickUtil.Configuration;
+using ChristmasPickUtil.Verbs.Models;
 using Common;
+using Common.ChristmasPickList;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
@@ -42,6 +45,14 @@ namespace ChristmasPickUtil.Verbs
             var emailTemplate = System.IO.File.ReadAllText(pathToTemplate);
 
             return emailTemplate;
+        }
+
+        protected string GetReportPath()
+        {
+            var pathToReportFolder = _cfgProvider.GetConfiguration(CfgKey.ReportPathKey);
+            if (string.IsNullOrWhiteSpace(pathToReportFolder))
+                throw new InvalidOperationException($"Check configuration for {CfgKey.ReportPathKey} it appears to be missing or not set.");
+            return pathToReportFolder;
         }
 
         protected string CreatePlainTextEmailBody(Person giftMaker, string pickMessage, string emailTemplate)
@@ -97,6 +108,50 @@ namespace ChristmasPickUtil.Verbs
             return successfulEmailSentCount;
         }
 
+        protected XMasPickList GetXmasPickList(XMasDay christmasDay, XMasPickListType listType)
+        {
+            FileArchivePersister? persister = null;
+            if (listType == XMasPickListType.Kid)
+            {
+                var kidCfgPath = _cfgProvider.GetConfiguration(CfgKey.KidArchivePath);
+                persister = new FileArchivePersister(kidCfgPath);
+            }
+            if (listType == XMasPickListType.Adult)
+            {
+                var adultCfgPath = _cfgProvider.GetConfiguration(CfgKey.AdultArchivePath);
+                persister = new FileArchivePersister(adultCfgPath);
+            }
+            if (persister == null) throw new NotImplementedException($"The XMasPickListType of {listType} is not defined.");
+
+            XMasArchive archive = persister.LoadArchive();
+            return archive.GetPickListForYear(christmasDay);
+        }
+
+        protected XMasDay? GetXMasDay(int? year)
+        {
+            if (year == null)
+            {
+                _logger.LogError("Could not conver <null> year to XMasDay type.");
+                return null;
+            }
+            var xmasDayValid = XMasDay.TryParse(year.Value, out XMasDay xmasDay);
+            if (!xmasDayValid)
+            {
+                _logger.LogError("Could not convert Year: {year} to XMasDay type.", year);
+                return null;
+            }
+            return xmasDay;
+        }
+
+        protected XMasPickListType? GetPickListType(ListType listType)
+        {
+            if (!XMasPickListType.TryParse(listType.ToString(), out XMasPickListType pickListType))
+            {
+                _logger.LogError("Could not convert list type: {list} to XMasDay list type.", listType);
+                return null;
+            }
+            return pickListType;
+        }
         public abstract Task<int> DoVerbAsync(T options);
     }
 }

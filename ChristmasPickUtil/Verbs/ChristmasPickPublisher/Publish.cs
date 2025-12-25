@@ -8,12 +8,6 @@ using Common;
 using Common.ChristmasPickList;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChristmasPickUtil.Verbs.ChristmasPickPublisher
 {
@@ -23,40 +17,15 @@ namespace ChristmasPickUtil.Verbs.ChristmasPickPublisher
         public Publish(IConfiguration config, ILogger<PublishOptions> logger) 
             : base(config, logger)
         {
-
-        }
-
-        private XMasPickList GetXmasPickList(XMasDay christmasDay, XMasPickListType listType)
-        {
-            FileArchivePersister? persister = null;
-            if (listType == XMasPickListType.Kid)
-            {
-                var kidCfgPath = _cfgProvider.GetConfiguration(CfgKey.KidArchivePath);
-                persister = new FileArchivePersister(kidCfgPath);
-            }
-            if (listType == XMasPickListType.Adult)
-            {
-                var adultCfgPath = _cfgProvider.GetConfiguration(CfgKey.AdultArchivePath);
-                persister = new FileArchivePersister(adultCfgPath);
-            }
-            if (persister == null) throw new NotImplementedException($"The XMasPickListType of {listType} is not defined.");
-
-            XMasArchive archive = persister.LoadArchive();
-            return archive.GetPickListForYear(christmasDay);
         }
 
         public override async Task<int> DoVerbAsync(PublishOptions options)
         {
-            var xmasDayValid = XMasDay.TryParse(options.Year, out XMasDay xmasDay);
-            if (!xmasDayValid)
+            var xmasDay = GetXMasDay(options.Year);
+            var pickListType = GetPickListType(options.Type);
+            if (xmasDay == null || pickListType == null)
             {
-                _logger.LogError("Could not convert Year: {year} to XMasDay type.", options.Year);
                 return -1;
-            }
-            if (!XMasPickListType.TryParse(options.Type.ToString(), out XMasPickListType pickListType))
-            {
-                _logger.LogError("Could not convert list type: {list} to XMasDay list type.", options.Type);
-                return -2;
             }
             
             _logger.LogInformation("Command is publishing picks for {year} for {listtype}", xmasDay, pickListType);

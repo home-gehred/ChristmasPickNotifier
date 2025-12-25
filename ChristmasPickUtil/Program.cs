@@ -1,5 +1,6 @@
 ﻿using ChristmasPickUtil.Verbs.ChristmasPick;
 using ChristmasPickUtil.Verbs.ChristmasPickPublisher;
+using ChristmasPickUtil.Verbs.ChristmasReport;
 using ChristmasPickUtil.Verbs.ResetChristmasPickPublisher;
 using ChristmasPickUtil.Verbs.ViewChristmasPickTemplate;
 using CommandLine;
@@ -15,6 +16,7 @@ class Program
     {
         IConfiguration config = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
+            .AddJsonFile("local.settings.json", optional: false, reloadOnChange: false)
             .AddUserSecrets<Program>()
             .Build();
         using var loggerFactory = LoggerFactory.Create(builder =>
@@ -38,12 +40,14 @@ class Program
            PublishOptions,
            ResetOptions,
            ViewTemplateOptions,
-           PickOptions>(args)
+           PickOptions,
+           ReportOptions>(args)
            .MapResult(
                (PublishOptions options) => RunPublish(config, loggerFactory, options),
                (ResetOptions options) => RunReset(config, loggerFactory, options),
                (ViewTemplateOptions options) => RunViewTemplate(config, loggerFactory, options),
                (PickOptions options) => RunPick(config, loggerFactory, options),
+               (ReportOptions options) => RunReport(config, loggerFactory, options),
                errors => 1
            );
 
@@ -78,4 +82,10 @@ class Program
         return verb.DoVerbAsync(options).GetAwaiter().GetResult();
     }
 
+    static int RunReport(IConfiguration config, ILoggerFactory loggerFactory, ReportOptions options)
+    {
+        var logger = loggerFactory.CreateLogger<ReportOptions>();
+        var verb = new Report(config, logger);
+        return verb.DoVerbAsync(options).GetAwaiter().GetResult();
+    }
 }
