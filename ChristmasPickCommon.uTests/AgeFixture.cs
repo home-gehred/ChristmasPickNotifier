@@ -16,16 +16,18 @@ namespace Common.Test
     public void ShouldThrowExceptionNowIsEqualToMinValue()
     {
       DateTime bday = new DateTime(1972, 7, 27);
-      var actual = Assert.Throws<ArgumentException>(() => {
-            Age.CalculateAge(DateTime.MinValue, bday);
+      var actual = Assert.Throws<ArgumentException>(() =>
+      {
+        Age.CalculateAge(DateTime.MinValue, bday);
       });
     }
-    
+
     [Fact]
     public void ShouldThrowExceptionNowIsEqualToMaxValue()
     {
       DateTime bday = new DateTime(1972, 7, 27);
-      var actual = Assert.Throws<ArgumentException>(() => {
+      var actual = Assert.Throws<ArgumentException>(() =>
+      {
         Age.CalculateAge(DateTime.MaxValue, bday);
       });
     }
@@ -34,8 +36,9 @@ namespace Common.Test
     public void ShouldThrowExceptionBDayIsEqualToMinValue()
     {
       DateTime bday = new DateTime(1972, 7, 27);
-      DateTime now = new DateTime(2008,9,18);
-      var actual = Assert.Throws<ArgumentException>(() => {
+      DateTime now = new DateTime(2008, 9, 18);
+      var actual = Assert.Throws<ArgumentException>(() =>
+      {
         Age.CalculateAge(now, DateTime.MinValue);
       });
     }
@@ -45,7 +48,8 @@ namespace Common.Test
     {
       DateTime bday = new DateTime(1972, 7, 27);
       DateTime now = new DateTime(2008, 9, 18);
-      var actual = Assert.Throws<ArgumentException>(() => {
+      var actual = Assert.Throws<ArgumentException>(() =>
+      {
         Age.CalculateAge(now, DateTime.MaxValue);
       });
     }
@@ -55,7 +59,8 @@ namespace Common.Test
     {
       DateTime bday = new DateTime(2008, 9, 18);
       DateTime now = new DateTime(1972, 7, 27);
-      var actual = Assert.Throws<ArgumentException>(() => {
+      var actual = Assert.Throws<ArgumentException>(() =>
+      {
         Age.CalculateAge(now, bday);
       });
     }
@@ -74,7 +79,7 @@ namespace Common.Test
     public void BDayAndNowAreLessThenOneYear()
     {
       DateTime bday = new DateTime(2008, 9, 18);
-      DateTime now = new DateTime(2008, 9, 27); 
+      DateTime now = new DateTime(2008, 9, 27);
       Age actual = Age.CalculateAge(now, bday);
       Assert.Equal(0, actual.Year);
       Assert.Equal(9, actual.Day);
