@@ -9,14 +9,15 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ChristmasPickUtil/bin/Debug/net9.0/ChristmasPickUtil",
+            "program": "${workspaceFolder}/ChristmasPickUtil/bin/Debug/net11.0/ChristmasPickUtil",
             "args": [
-                "Report",
+                "VerifyFamilyContact",
                 "--year",
                 "2025",
                 "--type",
                 "Adult"
-            ]
+            ],
+            "console": "internalConsole"
         },
         {
             "name": "Christmas Pick Trial Harness (Kid)",

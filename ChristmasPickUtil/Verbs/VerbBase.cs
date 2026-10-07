@@ -9,7 +9,7 @@ using Common;
 using Common.ChristmasPickList;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System.Security.Cryptography;
+
 
 namespace ChristmasPickUtil.Verbs
 {
@@ -53,6 +53,14 @@ namespace ChristmasPickUtil.Verbs
             if (string.IsNullOrWhiteSpace(pathToReportFolder))
                 throw new InvalidOperationException($"Check configuration for {CfgKey.ReportPathKey} it appears to be missing or not set.");
             return pathToReportFolder;
+        }
+
+        protected string GetFamilyContactsPath()
+        {
+            var pathToFamilyContacts = _cfgProvider.GetConfiguration(CfgKey.FamilyContacts);
+            if (string.IsNullOrWhiteSpace(pathToFamilyContacts))
+                throw new InvalidOperationException($"Check configuration for {CfgKey.FamilyContacts} it appears to be missing or not set.");
+            return pathToFamilyContacts;
         }
 
         protected string CreatePlainTextEmailBody(Person giftMaker, string pickMessage, string emailTemplate)

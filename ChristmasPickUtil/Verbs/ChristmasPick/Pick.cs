@@ -1,7 +1,6 @@
 ﻿using ChristmasPickCommon;
 using ChristmasPickUtil.Configuration;
 using ChristmasPickUtil.Verbs.ChristmasPick.Factories;
-using ChristmasPickUtil.Verbs.ChristmasPick.Services;
 using Common.ChristmasPickList;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;

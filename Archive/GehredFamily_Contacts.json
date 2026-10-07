@@ -651,5 +651,29 @@
       "jennakassnel@gmail.com"
     ],
     "ShouldBeContacted": false
+  },
+  {
+    "Key": {
+      "FirstName": "Caleb",
+      "LastName": "Roberts",
+      "Birthday": "2026-03-28T00:00:00"
+    },
+    "Emails": [
+      "teryn.gehred@valpo.edu",
+      "graeme.roberts@valpo.edu"
+    ],
+    "ShouldBeContacted": false
+  },
+  {
+    "Key": {
+      "FirstName": "Atticus",
+      "LastName": "Akinbolude",
+      "Birthday": "2026-06-15T00:00:00"
+    },
+    "Emails": [
+      "dominogoc@gmail.com",
+      "kinols0907@gmail.com"
+    ],
+    "ShouldBeContacted": false
   }
 ]
