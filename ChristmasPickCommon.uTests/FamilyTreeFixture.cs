@@ -10,10 +10,10 @@ namespace Common.Test
 
     public Family CreateTestGehredFamily()
     {
-        Person AnnG = new Person("test", "Gehred", new DateTime(1962, 9, 26), "11121111-2222-3333-4444-555555555555");
-        Person JohnG = new Person("test2", "Gehred", new DateTime(1962, 2, 13), "11131111-2222-3333-4444-555555555555");
-        Person MadelineG = new Person("test3", "Gehred", new DateTime(1988, 4, 15), "11141111-2222-3333-4444-555555555555");
-        Person CecilaG = new Person("test4", "Gehred", new DateTime(1990, 6, 21), "11151111-2222-3333-4444-555555555555");
+      Person AnnG = new Person("test", "Gehred", new DateTime(1962, 9, 26), "11121111-2222-3333-4444-555555555555");
+      Person JohnG = new Person("test2", "Gehred", new DateTime(1962, 2, 13), "11131111-2222-3333-4444-555555555555");
+      Person MadelineG = new Person("test3", "Gehred", new DateTime(1988, 4, 15), "11141111-2222-3333-4444-555555555555");
+      Person CecilaG = new Person("test4", "Gehred", new DateTime(1990, 6, 21), "11151111-2222-3333-4444-555555555555");
 
 
       PersonCollection parents = new PersonCollection(AnnG, JohnG);
@@ -27,10 +27,10 @@ namespace Common.Test
 
     public Family CreateTest2GehredFamily()
     {
-        Person AnnG = new Person("test5", "Gehred", new DateTime(1962, 9, 26), "11311111-2222-3333-4444-555555555555");
-        Person JohnG = new Person("test6", "Gehred", new DateTime(1962, 2, 13), "11411111-2222-3333-4444-555555555555");
-        Person MadelineG = new Person("test7", "Gehred", new DateTime(1988, 4, 15), "11511111-2222-3333-4444-555555555555");
-        Person CecilaG = new Person("test8", "Gehred", new DateTime(1990, 6, 21), "11611111-2222-3333-4444-555555555555");
+      Person AnnG = new Person("test5", "Gehred", new DateTime(1962, 9, 26), "11311111-2222-3333-4444-555555555555");
+      Person JohnG = new Person("test6", "Gehred", new DateTime(1962, 2, 13), "11411111-2222-3333-4444-555555555555");
+      Person MadelineG = new Person("test7", "Gehred", new DateTime(1988, 4, 15), "11511111-2222-3333-4444-555555555555");
+      Person CecilaG = new Person("test8", "Gehred", new DateTime(1990, 6, 21), "11611111-2222-3333-4444-555555555555");
 
 
       PersonCollection parents = new PersonCollection(AnnG, JohnG);
@@ -102,7 +102,7 @@ namespace Common.Test
       StreamReader serializedStream = new StreamReader(myStream);
       string actual = serializedStream.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FamilyTree>\r\n  <Family>\r\n    <FamilyName>Brew City Gehreds</FamilyName>\r\n    <Parents>\r\n      <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n      <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n    </Parents>\r\n    <Children>\r\n      <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />\r\n      <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\" id=\"41111111-2222-3333-4444-555555555555\" />\r\n    </Children>\r\n  </Family>\r\n  <Family>\r\n    <FamilyName>WaWa Tosa Gehreds</FamilyName>\r\n    <Parents>\r\n      <Person firstname=\"Ann\" lastname=\"Gehred\" birthday=\"9/26/1962\" id=\"12111111-2222-3333-4444-555555555555\" />\r\n      <Person firstname=\"John\" lastname=\"Gehred\" birthday=\"2/13/1962\" id=\"13111111-2222-3333-4444-555555555555\" />\r\n    </Parents>\r\n    <Children>\r\n      <Person firstname=\"Madeline\" lastname=\"Gehred\" birthday=\"4/15/1988\" id=\"14111111-2222-3333-4444-555555555555\" />\r\n      <Person firstname=\"Cecila\" lastname=\"Gehred\" birthday=\"6/21/1990\" id=\"15111111-2222-3333-4444-555555555555\" />\r\n    </Children>\r\n  </Family>\r\n</FamilyTree>", actual);
+      Assert.Equal($"<?xml version=\"1.0\" encoding=\"utf-8\"?>{Environment.NewLine}<FamilyTree>{Environment.NewLine}  <Family>{Environment.NewLine}    <FamilyName>Brew City Gehreds</FamilyName>{Environment.NewLine}    <Parents>{Environment.NewLine}      <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />{Environment.NewLine}      <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    </Parents>{Environment.NewLine}    <Children>{Environment.NewLine}      <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />{Environment.NewLine}      <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\" id=\"41111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    </Children>{Environment.NewLine}  </Family>{Environment.NewLine}  <Family>{Environment.NewLine}    <FamilyName>WaWa Tosa Gehreds</FamilyName>{Environment.NewLine}    <Parents>{Environment.NewLine}      <Person firstname=\"Ann\" lastname=\"Gehred\" birthday=\"9/26/1962\" id=\"12111111-2222-3333-4444-555555555555\" />{Environment.NewLine}      <Person firstname=\"John\" lastname=\"Gehred\" birthday=\"2/13/1962\" id=\"13111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    </Parents>{Environment.NewLine}    <Children>{Environment.NewLine}      <Person firstname=\"Madeline\" lastname=\"Gehred\" birthday=\"4/15/1988\" id=\"14111111-2222-3333-4444-555555555555\" />{Environment.NewLine}      <Person firstname=\"Cecila\" lastname=\"Gehred\" birthday=\"6/21/1990\" id=\"15111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    </Children>{Environment.NewLine}  </Family>{Environment.NewLine}</FamilyTree>", actual);
 
     }
 

@@ -24,7 +24,7 @@ namespace Common.Test
       StreamReader xmlData = new StreamReader(myStream);
       string actual = xmlData.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<PersonCollection>\r\n  <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n</PersonCollection>", actual);
+      Assert.Equal($"<?xml version=\"1.0\" encoding=\"utf-8\"?>{Environment.NewLine}<PersonCollection>{Environment.NewLine}  <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />{Environment.NewLine}</PersonCollection>", actual);
 
     }
 
@@ -37,7 +37,7 @@ namespace Common.Test
       Stream testData = new MemoryStream(serializedData);
       XmlSerializer xml = new XmlSerializer(typeof(PersonCollection));
       actual = (PersonCollection)xml.Deserialize(testData);
-      Assert.Equal(expected, actual);    
+      Assert.Equal(expected, actual);
     }
 
     [Fact]

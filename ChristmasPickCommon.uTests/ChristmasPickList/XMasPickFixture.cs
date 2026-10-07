@@ -15,8 +15,8 @@ namespace Common.Test.ChristmasPickList
     [Fact]
     public void TestChristmaPickSerialization()
     {
-        Person Bob = new Person("Bob", "Gehred", new DateTime(1972, 7, 27), "21111111-2222-3333-4444-555555555555");
-        Person Angie = new Person("Angie", "Gehred", new DateTime(1971, 9, 26), "11111111-2222-3333-4444-555555555555");
+      Person Bob = new Person("Bob", "Gehred", new DateTime(1972, 7, 27), "21111111-2222-3333-4444-555555555555");
+      Person Angie = new Person("Angie", "Gehred", new DateTime(1971, 9, 26), "11111111-2222-3333-4444-555555555555");
 
       XMasPick testPick = new XMasPick(Bob, Angie);
 
@@ -32,19 +32,19 @@ namespace Common.Test.ChristmasPickList
       StreamReader rawData = new StreamReader(myStream);
       string actual = rawData.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<XMasPick>\r\n  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n</XMasPick>", actual);
+      Assert.Equal($"<?xml version=\"1.0\" encoding=\"utf-8\"?>{Environment.NewLine}<XMasPick>{Environment.NewLine}  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />{Environment.NewLine}</XMasPick>", actual);
 
     }
 
     [Fact]
     public void TestChristmasPickDeserialization()
     {
-        Person Bob = new Person("Bob", "Gehred", new DateTime(1972, 7, 27), "21111111-2222-3333-4444-555555555555");
-        Person Angie = new Person("Angie", "Gehred", new DateTime(1971, 9, 26), "11111111-2222-3333-4444-555555555555");
+      Person Bob = new Person("Bob", "Gehred", new DateTime(1972, 7, 27), "21111111-2222-3333-4444-555555555555");
+      Person Angie = new Person("Angie", "Gehred", new DateTime(1971, 9, 26), "11111111-2222-3333-4444-555555555555");
 
       XMasPick expectedPick = new XMasPick(Bob, Angie);
       XMasPick actual = null;
-      byte[] serializedPickItem = ConvertStringToByteArray("<?xml version=\"1.0\"?>\r\n<XMasPick>\r\n  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n</XMasPick>");
+      byte[] serializedPickItem = ConvertStringToByteArray($"<?xml version=\"1.0\"?>{Environment.NewLine}<XMasPick>{Environment.NewLine}  <Subject firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  <Recipient firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />{Environment.NewLine}</XMasPick>");
       Stream testData = new MemoryStream(serializedPickItem);
       XmlSerializer xml = new XmlSerializer(typeof(XMasPick));
       actual = (XMasPick)xml.Deserialize(testData);

@@ -11,10 +11,10 @@ namespace Common.Test
 
     public Family CreateMilwaukeeGehredFamily()
     {
-        Person AngieG = new Person("Angie", "Gehred", new DateTime(1971, 9, 26), "11111111-2222-3333-4444-555555555555");
-        Person BobG = new Person("Bob", "Gehred", new DateTime(1972, 7, 27), "21111111-2222-3333-4444-555555555555");
-        Person MaxG = new Person("Max", "Gehred", new DateTime(2001, 9, 30), "31111111-2222-3333-4444-555555555555");
-        Person CharlotteG = new Person("Charlotte", "Gehred", new DateTime(2005, 4, 21), "41111111-2222-3333-4444-555555555555");
+      Person AngieG = new Person("Angie", "Gehred", new DateTime(1971, 9, 26), "11111111-2222-3333-4444-555555555555");
+      Person BobG = new Person("Bob", "Gehred", new DateTime(1972, 7, 27), "21111111-2222-3333-4444-555555555555");
+      Person MaxG = new Person("Max", "Gehred", new DateTime(2001, 9, 30), "31111111-2222-3333-4444-555555555555");
+      Person CharlotteG = new Person("Charlotte", "Gehred", new DateTime(2005, 4, 21), "41111111-2222-3333-4444-555555555555");
 
 
       PersonCollection parents = new PersonCollection(AngieG, BobG);
@@ -42,7 +42,7 @@ namespace Common.Test
       StreamReader serializedStream = new StreamReader(myStream);
       string actual = serializedStream.ReadToEnd();
       actual = actual.Substring(0, (int)length);
-      Assert.Equal("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Family>\r\n  <FamilyName>Brew City Gehreds</FamilyName>\r\n  <Parents>\r\n    <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n    <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  </Parents>\r\n  <Children>\r\n    <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />\r\n    <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\" id=\"41111111-2222-3333-4444-555555555555\" />\r\n  </Children>\r\n</Family>", actual);
+      Assert.Equal($"<?xml version=\"1.0\" encoding=\"utf-8\"?>{Environment.NewLine}<Family>{Environment.NewLine}  <FamilyName>Brew City Gehreds</FamilyName>{Environment.NewLine}  <Parents>{Environment.NewLine}    <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  </Parents>{Environment.NewLine}  <Children>{Environment.NewLine}    <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\" id=\"41111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  </Children>{Environment.NewLine}</Family>", actual);
 
     }
 
@@ -51,7 +51,7 @@ namespace Common.Test
     {
       Family testFamily = CreateMilwaukeeGehredFamily();
       Family actual = null;
-      byte[] serializedFamily = ConvertStringToByteArray("<?xml version=\"1.0\"?>\r\n<Family>\r\n  <FamilyName>Brew City Gehreds</FamilyName>\r\n  <Parents>\r\n    <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />\r\n    <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />\r\n  </Parents>\r\n  <Children>\r\n    <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />\r\n    <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\"  id=\"41111111-2222-3333-4444-555555555555\" />\r\n  </Children>\r\n</Family>");
+      byte[] serializedFamily = ConvertStringToByteArray($"<?xml version=\"1.0\"?>{Environment.NewLine}<Family>{Environment.NewLine}  <FamilyName>Brew City Gehreds</FamilyName>{Environment.NewLine}  <Parents>{Environment.NewLine}    <Person firstname=\"Angie\" lastname=\"Gehred\" birthday=\"9/26/1971\" id=\"11111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    <Person firstname=\"Bob\" lastname=\"Gehred\" birthday=\"7/27/1972\" id=\"21111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  </Parents>{Environment.NewLine}  <Children>{Environment.NewLine}    <Person firstname=\"Max\" lastname=\"Gehred\" birthday=\"9/30/2001\" id=\"31111111-2222-3333-4444-555555555555\" />{Environment.NewLine}    <Person firstname=\"Charlotte\" lastname=\"Gehred\" birthday=\"4/21/2005\"  id=\"41111111-2222-3333-4444-555555555555\" />{Environment.NewLine}  </Children>{Environment.NewLine}</Family>");
       Stream testData = new MemoryStream(serializedFamily);
       XmlSerializer xml = new XmlSerializer(typeof(Family));
       actual = (Family)xml.Deserialize(testData);
@@ -97,7 +97,8 @@ namespace Common.Test
       Family testFamily = CreateMilwaukeeGehredFamily();
       Person CharlotteG = new Person("Charlotte", "Gehred", new DateTime(2005, 4, 21), "41111111-2222-3333-4444-555555555555");
       Person Charlotte = new Person("Charlotte", "Gehred", new DateTime(2005, 4, 21), "41111111-2222-3333-4444-555555555555");
-      var actualException = Assert.Throws<ArgumentException>(() => {
+      var actualException = Assert.Throws<ArgumentException>(() =>
+      {
         testFamily.DetermineRelationship(CharlotteG, Charlotte);
       });
     }
@@ -108,7 +109,8 @@ namespace Common.Test
       Family testFamily = CreateMilwaukeeGehredFamily();
       Person Bill = new Person("Bill", "Wong", new DateTime(2005, 4, 21), "91111111-2222-3333-4444-555555555555");
       Person Ted = new Person("Ted", "Wong", new DateTime(2005, 4, 21), "81111111-2222-3333-4444-555555555555");
-      var actualException = Assert.Throws<ArgumentException>(() => {
+      var actualException = Assert.Throws<ArgumentException>(() =>
+      {
         testFamily.DetermineRelationship(Bill, Ted);
       });
     }
@@ -125,7 +127,8 @@ namespace Common.Test
       kids.Add(BobG);
 
       Family testFamily = new Family("My Dad is myself", parents, kids);
-      var actualException = Assert.Throws<ArgumentException>(() => {
+      var actualException = Assert.Throws<ArgumentException>(() =>
+      {
         testFamily.DetermineRelationship(AngieG, BobG);
       });
     }
@@ -189,7 +192,7 @@ namespace Common.Test
       FamilyRelation actual = testFamily.DetermineRelationship(BobG, AngieG);
       Assert.Equal(FamilyRelation.Spouse, actual);
     }
-    
+
   }
 }
 
