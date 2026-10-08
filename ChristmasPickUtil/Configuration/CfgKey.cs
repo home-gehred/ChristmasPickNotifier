@@ -8,7 +8,7 @@
         public readonly static CfgKey KidArchivePath = new CfgKey("Values:kidArchivePath");
         public readonly static CfgKey PathToEmailTemplate = new CfgKey("Values:pathToEmailTemplate");
         public readonly static CfgKey SendGridApiKey = new CfgKey("sendgrid-api-key");
-        public readonly static CfgKey SendInBlueApiKey = new CfgKey("sendinblue-api-key");
+        public readonly static CfgKey SendInBlueApiKey = new CfgKey("Values:sendinblue-api-key");
         public readonly static CfgKey ReportPathKey = new CfgKey("Values:reportArchivePath");
         private readonly string name;
         private CfgKey(string configurationKey)

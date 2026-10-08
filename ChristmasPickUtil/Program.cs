@@ -2,6 +2,7 @@
 using ChristmasPickUtil.Verbs.ChristmasPickPublisher;
 using ChristmasPickUtil.Verbs.ChristmasReport;
 using ChristmasPickUtil.Verbs.ResetChristmasPickPublisher;
+using ChristmasPickUtil.Verbs.TestEmail;
 using ChristmasPickUtil.Verbs.VerifyEmailContacts;
 using ChristmasPickUtil.Verbs.VerifyFamilyContacts;
 using ChristmasPickUtil.Verbs.ViewChristmasPickTemplate;
@@ -44,7 +45,8 @@ class Program
            ViewTemplateOptions,
            PickOptions,
            ReportOptions,
-           VerifyFamilyContactsOptions>(args)
+           VerifyFamilyContactsOptions,
+           EmailOption>(args)
            .MapResult(
                (PublishOptions options) => RunPublish(config, loggerFactory, options),
                (ResetOptions options) => RunReset(config, loggerFactory, options),
@@ -52,6 +54,7 @@ class Program
                (PickOptions options) => RunPick(config, loggerFactory, options),
                (ReportOptions options) => RunReport(config, loggerFactory, options),
                (VerifyFamilyContactsOptions options) => RunVerifyFamilyContacts(config, loggerFactory, options),
+               (EmailOption options) => RunTestEmail(config, loggerFactory, options),
                errors => 1
            );
 
@@ -97,6 +100,13 @@ class Program
     {
         var logger = loggerFactory.CreateLogger<VerifyFamilyContactsOptions>();
         var verb = new VerifyFamilyContactsVerb(config, logger);
+        return verb.DoVerbAsync(options).GetAwaiter().GetResult();
+    }
+
+    static int RunTestEmail(IConfiguration config, ILoggerFactory loggerFactory, EmailOption options)
+    {
+        var logger = loggerFactory.CreateLogger<EmailOption>();
+        var verb = new Email(config, logger);
         return verb.DoVerbAsync(options).GetAwaiter().GetResult();
     }
 }

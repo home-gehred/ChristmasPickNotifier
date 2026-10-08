@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Common
@@ -28,26 +26,26 @@ namespace Common
 
     public string FirstName
     {
-        get
-        {
-            return mFirstName;
-        }
+      get
+      {
+        return mFirstName;
+      }
     }
     public string LastName
     {
-        get
-        {
-            return mLastName;
-        }
+      get
+      {
+        return mLastName;
+      }
     }
 
-        public DateTime BirthDay
-        {
-            get
-            {
-                return mBirthDay;
-            }
-        }
+    public DateTime BirthDay
+    {
+      get
+      {
+        return mBirthDay;
+      }
+    }
 
     public bool IsConsideredAnAdult(DateTime dateToEvaluate)
     {
@@ -76,7 +74,7 @@ namespace Common
     public override bool Equals(object o)
     {
       if (o.GetType() == typeof(Person))
-       return Person.AreEquals(this, (Person) o);
+        return Person.AreEquals(this, (Person)o);
 
       return false;
     }
@@ -88,42 +86,43 @@ namespace Common
 
     protected static bool AreEquals(Person a, Person b)
     {
-            bool areEqual = false;
-            if ( (a == null) || (b == null)) {
-              return false;
-            }
-            if (a.mId == b.mId)
-            {
-                areEqual = true;
-            }            //if (string.Compare(a.mFirstName, b.mFirstName) == 0)
-            //{
-            //  if (string.Compare(a.mLastName, b.mLastName) == 0)
-            //  {
-            //    if (a.mBirthDay == b.mBirthDay)
-            //    {
-            //      areEqual = true;
-            //    }
-            //  }
-            //}
+      bool areEqual = false;
+      if ((a == null) || (b == null))
+      {
+        return false;
+      }
+      if (a.mId == b.mId)
+      {
+        areEqual = true;
+      }            //if (string.Compare(a.mFirstName, b.mFirstName) == 0)
+                   //{
+                   //  if (string.Compare(a.mLastName, b.mLastName) == 0)
+                   //  {
+                   //    if (a.mBirthDay == b.mBirthDay)
+                   //    {
+                   //      areEqual = true;
+                   //    }
+                   //  }
+                   //}
 
-            return areEqual;
+      return areEqual;
     }
 
-    public static bool operator==(Person a, Person b)
+    public static bool operator ==(Person a, Person b)
     {
       if (object.ReferenceEquals(a, null) &&
           object.ReferenceEquals(b, null))
-            {
-                return true;
-            }
+      {
+        return true;
+      }
       else
-            {
-                if (object.ReferenceEquals(a, null) ||
-                object.ReferenceEquals(b, null))
-                {
-                    return false;
-                }
-            }
+      {
+        if (object.ReferenceEquals(a, null) ||
+        object.ReferenceEquals(b, null))
+        {
+          return false;
+        }
+      }
       return Person.AreEquals(a, b);
     }
 
@@ -206,7 +205,7 @@ namespace Common
     /// </summary>
     /// <returns></returns>
     public void WriteXml(System.Xml.XmlWriter writer)
-    { 
+    {
       //writer.WriteStartElement("Person", mNamespace);
       writer.WriteAttributeString("firstname", this.mFirstName);
       writer.WriteAttributeString("lastname", this.mLastName);
