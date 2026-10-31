@@ -49,5 +49,16 @@
             ],
             "console": "internalConsole"
         },
+        {
+            "name": "C#: View Template Debug",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ChristmasPickUtil/bin/Debug/net11.0/ChristmasPickUtil",
+            "args": [
+                "ViewTemplate"
+            ],
+            "console": "internalConsole"
+        }
     ]
 }
